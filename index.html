@@ -1,0 +1,2468 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ForgeVoice Studio | AI Automation Agency — Build · Deploy · Transform</title>
+  <meta name="description" content="We build AI-powered automations, deploy revenue-generating systems, and transform how businesses operate. Custom-scoped projects. Limited to 3 per month.">
+  <meta property="og:title" content="ForgeVoice Studio | AI Automation Agency — Build · Deploy · Transform">
+  <meta property="og:description" content="From custom automations to AI-powered revenue systems. We build, deploy, and scale the infrastructure your business needs to grow.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://workflow-auto.vercel.app">
+  <meta property="og:image" content="https://workflow-auto.vercel.app/og-image.png">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:site_name" content="ForgeVoice Studio">
+  <meta property="og:locale" content="en_AU">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="ForgeVoice Studio | AI Automation Agency">
+  <meta name="twitter:description" content="From custom automations to AI-powered revenue systems. We build, deploy, and scale the infrastructure your business needs to grow.">
+  <meta name="twitter:image" content="https://workflow-auto.vercel.app/og-image.png">
+  <meta name="theme-color" content="#000000">
+  <meta name="author" content="ForgeVoice Studio">
+  <meta name="robots" content="index, follow">
+  <link rel="canonical" href="https://workflow-auto.vercel.app">
+  <link rel="icon" type="image/png" href="favicon.png">
+  <link rel="apple-touch-icon" href="logo.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+  <style>
+    /* ============================================
+       FORGEVOICE STUDIO — OBSIDIAN PRECISION v2
+       Premium Edition — Full Enhancement Suite
+       ============================================ */
+
+    :root {
+      --bg: #000000;
+      --bg-elevated: #060606;
+      --surface: #0a0a0a;
+      --surface-2: #0f0f0f;
+      --surface-3: #141414;
+      --border: #1a1a1a;
+      --border-hover: #2a2a2a;
+      --border-active: #3a3a3a;
+      --text: #d4d4d4;
+      --text-bright: #f5f5f5;
+      --text-muted: #777777;
+      --text-dim: #444444;
+      --accent: #c0c0c0;
+      --accent-bright: #ffffff;
+      --accent-gold: #C8A84E;
+      --accent-gold-dim: rgba(200, 168, 78, 0.15);
+      --accent-gold-glow: rgba(200, 168, 78, 0.08);
+      --glow: rgba(200, 200, 200, 0.06);
+      --glow-strong: rgba(200, 200, 200, 0.12);
+      --radius: 16px;
+      --radius-sm: 8px;
+      --radius-xs: 4px;
+      --ease-out: cubic-bezier(0.16, 1, 0.3, 1);
+      --ease-spring: cubic-bezier(0.34, 1.56, 0.64, 1);
+      --ease-expo: cubic-bezier(0.19, 1, 0.22, 1);
+      --font-display: 'Playfair Display', Georgia, 'Times New Roman', serif;
+      --font-body: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, sans-serif;
+      --font-mono: 'JetBrains Mono', 'SF Mono', 'Fira Code', monospace;
+    }
+
+    *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      font-family: var(--font-body);
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.6;
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+      overflow-x: hidden;
+    }
+
+    ::selection { background: rgba(200,168,78,0.25); color: var(--text-bright); }
+
+    /* ============ SCROLL PROGRESS BAR ============ */
+    .scroll-progress {
+      position: fixed;
+      top: 0;
+      left: 0;
+      height: 2px;
+      width: 0%;
+      background: linear-gradient(90deg, var(--accent-gold), var(--accent-bright), var(--accent-gold));
+      z-index: 10003;
+      transition: none;
+      will-change: width;
+    }
+
+    /* ============ NOISE OVERLAY ============ */
+    body::after {
+      content: '';
+      position: fixed;
+      inset: 0;
+      pointer-events: none;
+      z-index: 9999;
+      opacity: 0.025;
+      background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)'/%3E%3C/svg%3E");
+      background-repeat: repeat;
+      background-size: 128px;
+    }
+
+    /* ============ MOUSE-REACTIVE BACKGROUND ============ */
+    .mouse-glow {
+      position: fixed;
+      width: 600px;
+      height: 600px;
+      border-radius: 50%;
+      background: radial-gradient(circle, var(--accent-gold-glow), transparent 70%);
+      pointer-events: none;
+      z-index: 0;
+      transform: translate(-50%, -50%);
+      opacity: 0;
+      transition: opacity 0.6s;
+      will-change: transform;
+    }
+    .mouse-glow.active { opacity: 1; }
+
+    /* ============ CUSTOM CURSOR ============ */
+    .cursor-dot {
+      position: fixed;
+      width: 6px;
+      height: 6px;
+      border-radius: 50%;
+      background: var(--accent-gold);
+      pointer-events: none;
+      z-index: 10001;
+      transition: transform 0.15s var(--ease-spring), opacity 0.3s, width 0.2s, height 0.2s, background 0.3s;
+      transform: translate(-50%, -50%);
+      mix-blend-mode: difference;
+    }
+    .cursor-dot.clicking {
+      width: 4px;
+      height: 4px;
+    }
+    .cursor-ring {
+      position: fixed;
+      width: 36px;
+      height: 36px;
+      border-radius: 50%;
+      border: 1px solid rgba(200,168,78,0.3);
+      pointer-events: none;
+      z-index: 10000;
+      transition: width 0.3s var(--ease-out), height 0.3s var(--ease-out),
+                  border-color 0.3s, transform 0.15s ease, background 0.3s;
+      transform: translate(-50%, -50%);
+    }
+    .cursor-ring.hovering {
+      width: 56px;
+      height: 56px;
+      border-color: rgba(200,168,78,0.6);
+      background: rgba(200,168,78,0.04);
+    }
+    @media (hover: none), (max-width: 768px) {
+      .cursor-dot, .cursor-ring { display: none; }
+      .mouse-glow { display: none; }
+    }
+
+    /* ============ LOADER — ORCHESTRATED ============ */
+    .loader {
+      position: fixed;
+      inset: 0;
+      background: var(--bg);
+      z-index: 10002;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-direction: column;
+      gap: 20px;
+    }
+    .loader.dismissing {
+      animation: loaderDismiss 0.6s var(--ease-expo) forwards;
+    }
+    @keyframes loaderDismiss {
+      0% { opacity: 1; }
+      100% { opacity: 0; visibility: hidden; pointer-events: none; }
+    }
+    .loader.done {
+      opacity: 0;
+      visibility: hidden;
+      pointer-events: none;
+      display: none;
+    }
+    .loader-logo {
+      font-family: var(--font-display);
+      font-size: 22px;
+      letter-spacing: 8px;
+      text-transform: uppercase;
+      color: var(--text-bright);
+      opacity: 0;
+      transform: translateY(10px);
+      animation: loaderFadeIn 0.5s 0.1s var(--ease-out) forwards;
+    }
+    .loader-tagline {
+      font-family: var(--font-mono);
+      font-size: 10px;
+      letter-spacing: 4px;
+      text-transform: uppercase;
+      color: var(--accent-gold);
+      opacity: 0;
+      transform: translateY(8px);
+      animation: loaderFadeIn 0.4s 0.3s var(--ease-out) forwards;
+    }
+    .loader-bar {
+      width: 160px;
+      height: 1px;
+      background: var(--border);
+      position: relative;
+      overflow: hidden;
+      opacity: 0;
+      animation: loaderFadeIn 0.3s 0.2s var(--ease-out) forwards;
+    }
+    .loader-bar::after {
+      content: '';
+      position: absolute;
+      left: 0;
+      top: 0;
+      height: 100%;
+      width: 0%;
+      background: linear-gradient(90deg, var(--accent-gold), var(--accent-bright));
+      animation: loaderProgress 0.8s 0.3s var(--ease-out) forwards;
+    }
+    @keyframes loaderFadeIn { to { opacity: 1; transform: translateY(0); } }
+    @keyframes loaderProgress { to { width: 100%; } }
+
+    /* ============ LAYOUT ============ */
+    .container {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 clamp(20px, 5vw, 40px);
+    }
+    .container-narrow {
+      max-width: 800px;
+      margin: 0 auto;
+      padding: 0 clamp(20px, 5vw, 40px);
+    }
+
+    /* ============ NAVIGATION ============ */
+    nav {
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      z-index: 1000;
+      padding: 20px 0;
+      transition: padding 0.4s var(--ease-out), background 0.4s, border-color 0.4s;
+      border-bottom: 1px solid transparent;
+      opacity: 0;
+      transform: translateY(-10px);
+    }
+    nav.loaded {
+      opacity: 1;
+      transform: translateY(0);
+      transition: opacity 0.6s var(--ease-out), transform 0.6s var(--ease-out),
+                  padding 0.4s var(--ease-out), background 0.4s, border-color 0.4s;
+    }
+    nav.scrolled {
+      padding: 12px 0;
+      background: rgba(0, 0, 0, 0.88);
+      backdrop-filter: blur(24px) saturate(180%);
+      -webkit-backdrop-filter: blur(24px) saturate(180%);
+      border-bottom-color: var(--border);
+    }
+    .nav-inner {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 clamp(20px, 5vw, 40px);
+    }
+    .logo-group {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+      text-decoration: none;
+      transition: transform 0.3s var(--ease-out);
+    }
+    .logo-icon {
+      width: 36px;
+      height: 36px;
+      border-radius: 6px;
+      transition: transform 0.4s var(--ease-spring);
+    }
+    nav.scrolled .logo-icon {
+      transform: scale(0.88);
+    }
+    .logo-group:hover .logo-icon { transform: rotate(-5deg) scale(1.08); }
+    .logo-text {
+      display: flex;
+      flex-direction: column;
+      line-height: 1;
+    }
+    .logo-name {
+      font-family: var(--font-display);
+      font-weight: 700;
+      font-size: 17px;
+      letter-spacing: 2.5px;
+      color: var(--text-bright);
+      text-transform: uppercase;
+    }
+    .logo-sub {
+      font-family: var(--font-mono);
+      font-size: 9px;
+      font-weight: 400;
+      letter-spacing: 3.5px;
+      color: var(--accent-gold);
+      text-transform: uppercase;
+      margin-top: 4px;
+    }
+    .nav-links {
+      display: flex;
+      align-items: center;
+      gap: 36px;
+      list-style: none;
+    }
+    .nav-links a {
+      font-size: 13px;
+      font-weight: 500;
+      color: var(--text-muted);
+      text-decoration: none;
+      letter-spacing: 0.5px;
+      transition: color 0.3s;
+      position: relative;
+    }
+    .nav-links a::after {
+      content: '';
+      position: absolute;
+      bottom: -4px;
+      left: 0;
+      width: 0;
+      height: 1px;
+      background: var(--accent-gold);
+      transition: width 0.3s var(--ease-out);
+    }
+    .nav-links a:hover { color: var(--text-bright); }
+    .nav-links a:hover::after { width: 100%; }
+    .nav-cta {
+      background: transparent;
+      color: var(--text-bright);
+      padding: 10px 24px;
+      border-radius: 100px;
+      text-decoration: none;
+      font-weight: 600;
+      font-size: 13px;
+      letter-spacing: 0.5px;
+      border: 1px solid var(--border-hover);
+      transition: all 0.3s var(--ease-out);
+      position: relative;
+      overflow: hidden;
+    }
+    .nav-cta::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: -100%;
+      width: 100%;
+      height: 100%;
+      background: linear-gradient(90deg, transparent, rgba(200,168,78,0.1), transparent);
+      transition: left 0.5s;
+    }
+    .nav-cta:hover::before { left: 100%; }
+    .nav-cta:hover {
+      background: var(--text-bright);
+      color: #000;
+      border-color: var(--text-bright);
+      transform: translateY(-1px);
+    }
+
+    /* Mobile menu toggle */
+    .menu-toggle {
+      display: none;
+      flex-direction: column;
+      gap: 5px;
+      background: none;
+      border: none;
+      cursor: pointer;
+      padding: 8px;
+      z-index: 1002;
+    }
+    .menu-toggle span {
+      display: block;
+      width: 22px;
+      height: 1.5px;
+      background: var(--text-bright);
+      transition: all 0.3s var(--ease-out);
+      transform-origin: center;
+    }
+    .menu-toggle.active span:nth-child(1) { transform: translateY(6.5px) rotate(45deg); }
+    .menu-toggle.active span:nth-child(2) { opacity: 0; transform: scaleX(0); }
+    .menu-toggle.active span:nth-child(3) { transform: translateY(-6.5px) rotate(-45deg); }
+
+    /* Mobile overlay menu */
+    .mobile-menu {
+      display: none;
+      position: fixed;
+      inset: 0;
+      background: rgba(0,0,0,0.97);
+      z-index: 1001;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      gap: 40px;
+      opacity: 0;
+      visibility: hidden;
+      transition: opacity 0.4s, visibility 0.4s;
+    }
+    .mobile-menu.open {
+      opacity: 1;
+      visibility: visible;
+    }
+    .mobile-menu a {
+      font-family: var(--font-display);
+      font-size: 32px;
+      color: var(--text-bright);
+      text-decoration: none;
+      letter-spacing: 1px;
+      opacity: 0;
+      transform: translateY(20px);
+      transition: opacity 0.4s, transform 0.4s var(--ease-out), color 0.3s;
+    }
+    .mobile-menu.open a {
+      opacity: 1;
+      transform: translateY(0);
+    }
+    .mobile-menu.open a:nth-child(1) { transition-delay: 0.1s; }
+    .mobile-menu.open a:nth-child(2) { transition-delay: 0.15s; }
+    .mobile-menu.open a:nth-child(3) { transition-delay: 0.2s; }
+    .mobile-menu.open a:nth-child(4) { transition-delay: 0.25s; }
+    .mobile-menu a:hover { color: var(--accent-gold); }
+
+    @media (max-width: 768px) {
+      .nav-links, .nav-cta { display: none; }
+      .menu-toggle { display: flex; }
+      .mobile-menu { display: flex; }
+    }
+
+    /* ============ HERO ============ */
+    .hero {
+      position: relative;
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      padding: 120px 0 80px;
+      overflow: hidden;
+    }
+    .hero-canvas {
+      position: absolute;
+      inset: 0;
+      z-index: 0;
+    }
+    /* Hero mesh gradient blobs */
+    .hero-mesh {
+      position: absolute;
+      inset: 0;
+      z-index: 0;
+      overflow: hidden;
+    }
+    .hero-mesh-blob {
+      position: absolute;
+      border-radius: 50%;
+      filter: blur(120px);
+      opacity: 0.06;
+      animation: meshFloat 20s ease-in-out infinite;
+    }
+    .hero-mesh-blob:nth-child(1) {
+      width: 600px;
+      height: 600px;
+      background: var(--accent-gold);
+      top: -10%;
+      left: 20%;
+      animation-delay: 0s;
+    }
+    .hero-mesh-blob:nth-child(2) {
+      width: 500px;
+      height: 500px;
+      background: #8888cc;
+      top: 40%;
+      right: -5%;
+      animation-delay: -7s;
+      animation-duration: 25s;
+    }
+    .hero-mesh-blob:nth-child(3) {
+      width: 400px;
+      height: 400px;
+      background: var(--accent-bright);
+      bottom: -5%;
+      left: 40%;
+      animation-delay: -14s;
+      animation-duration: 22s;
+    }
+    @keyframes meshFloat {
+      0%, 100% { transform: translate(0, 0) scale(1); }
+      25% { transform: translate(40px, -30px) scale(1.05); }
+      50% { transform: translate(-20px, 20px) scale(0.95); }
+      75% { transform: translate(30px, 10px) scale(1.02); }
+    }
+    .hero-gradient {
+      position: absolute;
+      inset: 0;
+      z-index: 1;
+      background:
+        radial-gradient(ellipse 80% 60% at 50% 40%, rgba(30,30,30,0.4), transparent),
+        radial-gradient(ellipse 60% 40% at 30% 70%, rgba(20,20,20,0.3), transparent),
+        radial-gradient(ellipse 50% 50% at 80% 30%, rgba(25,25,25,0.3), transparent);
+    }
+    .hero-content {
+      position: relative;
+      z-index: 2;
+      max-width: 800px;
+      padding: 0 clamp(20px, 5vw, 40px);
+    }
+    .hero-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 8px 20px;
+      border-radius: 100px;
+      background: rgba(200, 168, 78, 0.04);
+      border: 1px solid rgba(200, 168, 78, 0.12);
+      font-family: var(--font-mono);
+      font-size: 11px;
+      font-weight: 500;
+      color: var(--accent-gold);
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      margin-bottom: 32px;
+      opacity: 0;
+      transform: translateY(20px) scale(0.95);
+    }
+    .hero-badge.animate {
+      animation: heroReveal 0.8s var(--ease-out) forwards;
+    }
+    .hero-badge-dot {
+      width: 6px;
+      height: 6px;
+      border-radius: 50%;
+      background: var(--accent-gold);
+      animation: pulse 2s ease-in-out infinite;
+    }
+    @keyframes pulse {
+      0%, 100% { opacity: 0.4; transform: scale(1); }
+      50% { opacity: 1; transform: scale(1.3); }
+    }
+    .hero h1 {
+      font-family: var(--font-display);
+      font-size: clamp(36px, 5.5vw, 64px);
+      font-weight: 700;
+      line-height: 1.08;
+      letter-spacing: -1px;
+      color: var(--text-bright);
+      margin-bottom: 28px;
+    }
+    /* Clip-path word reveal */
+    .hero h1 .word {
+      display: inline-block;
+      opacity: 0;
+      transform: translateY(100%);
+      clip-path: inset(0 0 100% 0);
+    }
+    .hero h1 .word.animate {
+      animation: wordClipReveal 0.8s var(--ease-expo) forwards;
+    }
+    .hero h1 .word-em {
+      position: relative;
+      color: var(--accent-gold);
+    }
+    .hero h1 .word-em::after {
+      content: '';
+      position: absolute;
+      bottom: 2px;
+      left: 0;
+      width: 0;
+      height: 2px;
+      background: linear-gradient(90deg, var(--accent-gold), transparent);
+    }
+    .hero h1 .word-em.underline-animate::after {
+      animation: underlineDraw 0.8s 0.3s var(--ease-out) forwards;
+    }
+    @keyframes wordClipReveal {
+      to { opacity: 1; transform: translateY(0); clip-path: inset(0 0 0 0); }
+    }
+    @keyframes underlineDraw { to { width: 100%; } }
+    @keyframes heroReveal {
+      to { opacity: 1; transform: translateY(0) scale(1); }
+    }
+    .hero-desc {
+      font-size: clamp(16px, 2vw, 18px);
+      color: var(--text-muted);
+      line-height: 1.7;
+      max-width: 540px;
+      margin: 0 auto 48px;
+      opacity: 0;
+      transform: translateY(20px);
+    }
+    .hero-desc.animate {
+      animation: heroReveal 0.8s var(--ease-out) forwards;
+    }
+    .hero-actions {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 16px;
+      opacity: 0;
+      transform: translateY(20px);
+    }
+    .hero-actions.animate {
+      animation: heroReveal 0.8s var(--ease-out) forwards;
+    }
+
+    /* ============ BUTTONS — MAGNETIC + SHIMMER ============ */
+    .btn-primary {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      background: var(--text-bright);
+      color: #000;
+      padding: 16px 40px;
+      border-radius: 100px;
+      font-weight: 700;
+      font-size: 14px;
+      text-decoration: none;
+      letter-spacing: 0.5px;
+      transition: transform 0.4s var(--ease-out), box-shadow 0.4s var(--ease-out);
+      position: relative;
+      overflow: hidden;
+      will-change: transform;
+    }
+    /* Shimmer sweep on hover */
+    .btn-primary::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: -100%;
+      width: 50%;
+      height: 100%;
+      background: linear-gradient(90deg, transparent, rgba(200,168,78,0.25), transparent);
+      transform: skewX(-20deg);
+      transition: left 0.6s var(--ease-out);
+    }
+    .btn-primary:hover::before { left: 200%; }
+    .btn-primary:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 8px 40px rgba(200,168,78,0.15), 0 2px 8px rgba(200,168,78,0.1);
+    }
+    .btn-primary .arrow {
+      transition: transform 0.3s var(--ease-out);
+      font-size: 16px;
+    }
+    .btn-primary:hover .arrow { transform: translateX(5px); }
+    .hero-sub {
+      font-family: var(--font-mono);
+      font-size: 12px;
+      color: var(--text-dim);
+      letter-spacing: 0.5px;
+    }
+
+    /* Scroll indicator */
+    .scroll-indicator {
+      position: absolute;
+      bottom: 40px;
+      left: 50%;
+      transform: translateX(-50%);
+      z-index: 2;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 8px;
+      opacity: 0;
+    }
+    .scroll-indicator.animate {
+      animation: heroReveal 0.8s var(--ease-out) forwards;
+    }
+    .scroll-line {
+      width: 1px;
+      height: 40px;
+      background: var(--border-hover);
+      position: relative;
+      overflow: hidden;
+    }
+    .scroll-line::after {
+      content: '';
+      position: absolute;
+      top: -100%;
+      left: 0;
+      width: 100%;
+      height: 50%;
+      background: linear-gradient(to bottom, transparent, var(--accent-gold));
+      animation: scrollMove 1.5s ease-in-out infinite;
+    }
+    @keyframes scrollMove {
+      0% { top: -50%; }
+      100% { top: 110%; }
+    }
+    .scroll-text {
+      font-family: var(--font-mono);
+      font-size: 9px;
+      letter-spacing: 3px;
+      text-transform: uppercase;
+      color: var(--text-dim);
+    }
+    @media (max-width: 768px) {
+      .scroll-indicator { display: none; }
+    }
+
+    /* ============ SCROLL REVEAL SYSTEM — ENHANCED ============ */
+    .reveal {
+      opacity: 0;
+      transform: translateY(50px);
+      transition: opacity 0.9s var(--ease-out), transform 0.9s var(--ease-out);
+    }
+    .reveal.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+    .reveal-left {
+      opacity: 0;
+      transform: translateX(-50px);
+      transition: opacity 0.9s var(--ease-out), transform 0.9s var(--ease-out);
+    }
+    .reveal-left.visible {
+      opacity: 1;
+      transform: translateX(0);
+    }
+    .reveal-scale {
+      opacity: 0;
+      transform: scale(0.92);
+      transition: opacity 0.9s var(--ease-out), transform 0.9s var(--ease-out);
+    }
+    .reveal-scale.visible {
+      opacity: 1;
+      transform: scale(1);
+    }
+    /* Enhanced stagger — more pronounced 100ms delays */
+    .stagger-1 { transition-delay: 0.1s; }
+    .stagger-2 { transition-delay: 0.2s; }
+    .stagger-3 { transition-delay: 0.1s; }
+    .stagger-4 { transition-delay: 0.2s; }
+    .stagger-5 { transition-delay: 0.3s; }
+    .stagger-6 { transition-delay: 0.4s; }
+
+    /* ============ SECTION DIVIDERS — ANIMATED ============ */
+    .section-divider {
+      width: 100%;
+      height: 1px;
+      background: linear-gradient(90deg, transparent, var(--border-hover), var(--accent-gold-dim), var(--border-hover), transparent);
+      position: relative;
+      overflow: hidden;
+    }
+    .section-divider::after {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: -100%;
+      width: 60%;
+      height: 100%;
+      background: linear-gradient(90deg, transparent, var(--accent-gold), transparent);
+      animation: dividerSweep 4s ease-in-out infinite;
+      opacity: 0.4;
+    }
+    @keyframes dividerSweep {
+      0% { left: -60%; }
+      100% { left: 100%; }
+    }
+
+    /* ============ STATS ============ */
+    .stats-section {
+      padding: 40px 0 100px;
+      position: relative;
+    }
+    .stats-section::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 60px;
+      height: 1px;
+      background: linear-gradient(90deg, transparent, var(--accent-gold), transparent);
+    }
+    .stats-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 0;
+      position: relative;
+    }
+    .stat-item {
+      text-align: center;
+      padding: 48px 24px;
+      position: relative;
+    }
+    .stat-item:not(:last-child)::after {
+      content: '';
+      position: absolute;
+      top: 50%;
+      right: 0;
+      transform: translateY(-50%);
+      width: 1px;
+      height: 40px;
+      background: var(--border);
+    }
+    .stat-number {
+      font-family: var(--font-display);
+      font-size: clamp(40px, 5vw, 56px);
+      font-weight: 700;
+      color: var(--text-bright);
+      line-height: 1;
+      margin-bottom: 8px;
+    }
+    .stat-label {
+      font-family: var(--font-mono);
+      font-size: 11px;
+      color: var(--text-dim);
+      letter-spacing: 1px;
+      text-transform: uppercase;
+    }
+    @media (max-width: 640px) {
+      .stats-grid { grid-template-columns: 1fr; gap: 0; }
+      .stat-item:not(:last-child)::after {
+        top: auto;
+        bottom: 0;
+        right: 50%;
+        transform: translateX(50%);
+        width: 40px;
+        height: 1px;
+      }
+      .stat-item { padding: 32px 24px; }
+    }
+
+    /* ============ SECTION STRUCTURE ============ */
+    .section {
+      padding: clamp(80px, 10vw, 120px) 0;
+      position: relative;
+    }
+    .section-label {
+      font-family: var(--font-mono);
+      font-size: 11px;
+      font-weight: 500;
+      color: var(--accent-gold);
+      text-transform: uppercase;
+      letter-spacing: 3px;
+      margin-bottom: 16px;
+    }
+    .section-title {
+      font-family: var(--font-display);
+      font-size: clamp(28px, 4vw, 48px);
+      font-weight: 700;
+      line-height: 1.1;
+      letter-spacing: -0.5px;
+      color: var(--text-bright);
+      margin-bottom: 20px;
+    }
+    .section-desc {
+      font-size: 16px;
+      color: var(--text-muted);
+      line-height: 1.7;
+      max-width: 500px;
+      margin-bottom: 56px;
+    }
+
+    /* ============ PROBLEMS — ENHANCED CARDS ============ */
+    .problems-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 20px;
+    }
+    .problem-card {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 36px 32px;
+      transition: transform 0.5s var(--ease-out), border-color 0.4s, box-shadow 0.4s;
+      position: relative;
+      overflow: hidden;
+      will-change: transform;
+      transform-style: preserve-3d;
+    }
+    .problem-card::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: radial-gradient(circle at var(--mouse-x, 50%) var(--mouse-y, 50%),
+        var(--glow-strong), transparent 60%);
+      opacity: 0;
+      transition: opacity 0.4s;
+    }
+    .problem-card:hover::before { opacity: 1; }
+    .problem-card:hover {
+      border-color: var(--border-hover);
+      box-shadow: 0 20px 50px rgba(0,0,0,0.4);
+    }
+    .problem-icon {
+      width: 48px;
+      height: 48px;
+      border-radius: 12px;
+      background: var(--accent-gold-dim);
+      border: 1px solid rgba(200,168,78,0.15);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-bottom: 24px;
+      position: relative;
+      z-index: 1;
+      transition: transform 0.4s var(--ease-spring), background 0.3s;
+    }
+    .problem-card:hover .problem-icon {
+      transform: scale(1.1) rotate(-5deg);
+      background: rgba(200,168,78,0.2);
+    }
+    .problem-icon svg {
+      width: 22px;
+      height: 22px;
+      stroke: var(--accent-gold);
+      fill: none;
+      stroke-width: 1.5;
+      stroke-linecap: round;
+      stroke-linejoin: round;
+      transition: stroke 0.3s;
+    }
+    .problem-card h3 {
+      font-size: 18px;
+      font-weight: 700;
+      color: var(--text-bright);
+      margin-bottom: 12px;
+      position: relative;
+      z-index: 1;
+    }
+    .problem-card p {
+      font-size: 14px;
+      color: var(--text-muted);
+      line-height: 1.7;
+      position: relative;
+      z-index: 1;
+    }
+    @media (max-width: 900px) {
+      .problems-grid { grid-template-columns: 1fr; max-width: 500px; }
+    }
+
+    /* ============ TRUST BAR ============ */
+    .trust-bar {
+      text-align: center;
+      padding: 40px 0 0;
+    }
+    .trust-text {
+      font-family: var(--font-mono);
+      font-size: 10px;
+      letter-spacing: 3px;
+      text-transform: uppercase;
+      color: var(--text-dim);
+    }
+    .trust-logos {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 48px;
+      margin-top: 20px;
+      flex-wrap: wrap;
+    }
+    .trust-logo {
+      font-family: var(--font-body);
+      font-size: 14px;
+      font-weight: 600;
+      color: var(--text-dim);
+      letter-spacing: 1px;
+      opacity: 0.5;
+      transition: opacity 0.3s;
+    }
+    .trust-logo:hover { opacity: 0.8; }
+
+    /* ============ PROCESS / HOW IT WORKS ============ */
+    .process-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 0;
+      position: relative;
+    }
+    .process-grid::before {
+      content: '';
+      position: absolute;
+      top: 24px;
+      left: 12.5%;
+      right: 12.5%;
+      height: 1px;
+      background: var(--border);
+    }
+    .process-line-fill {
+      position: absolute;
+      top: 24px;
+      left: 12.5%;
+      height: 1px;
+      width: 0;
+      background: linear-gradient(90deg, var(--accent-gold), var(--accent));
+      transition: width 1.2s var(--ease-out);
+    }
+    .process-grid.visible .process-line-fill {
+      width: 75%;
+    }
+    .process-step {
+      text-align: center;
+      padding: 0 16px;
+      position: relative;
+    }
+    .step-num {
+      width: 48px;
+      height: 48px;
+      border-radius: 50%;
+      border: 1px solid var(--border);
+      background: var(--bg);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-family: var(--font-display);
+      font-weight: 700;
+      font-size: 18px;
+      color: var(--text-dim);
+      margin: 0 auto 24px;
+      position: relative;
+      z-index: 1;
+      transition: border-color 0.5s, color 0.5s, box-shadow 0.5s;
+    }
+    .process-grid.visible .step-num {
+      border-color: var(--accent-gold);
+      color: var(--accent-gold);
+      box-shadow: 0 0 24px rgba(200,168,78,0.08);
+    }
+    .process-step h3 {
+      font-size: 16px;
+      font-weight: 700;
+      color: var(--text-bright);
+      margin-bottom: 10px;
+    }
+    .process-step p {
+      font-size: 13px;
+      color: var(--text-muted);
+      line-height: 1.7;
+    }
+    @media (max-width: 768px) {
+      .process-grid {
+        grid-template-columns: 1fr;
+        gap: 40px;
+        padding-left: 40px;
+      }
+      .process-grid::before {
+        top: 0; bottom: 0; left: 16px; right: auto;
+        width: 1px; height: auto;
+      }
+      .process-line-fill {
+        top: 0; left: 16px; width: 1px !important; height: 0;
+      }
+      .process-grid.visible .process-line-fill {
+        width: 1px !important; height: 100%;
+      }
+      .process-step { text-align: left; padding: 0 0 0 24px; }
+      .step-num {
+        position: absolute; left: -40px; top: 0;
+        width: 32px; height: 32px; font-size: 14px; margin: 0;
+      }
+    }
+
+    /* ============ SERVICES — 3 PLAYS ============ */
+    .services-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 24px;
+      margin-top: 60px;
+    }
+    .service-card {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 16px;
+      padding: 40px 32px;
+      display: flex;
+      flex-direction: column;
+      transition: border-color 0.3s, box-shadow 0.4s;
+      position: relative;
+      overflow: hidden;
+      will-change: transform;
+      transform-style: preserve-3d;
+    }
+    .service-card:hover {
+      border-color: var(--border-hover);
+      box-shadow: 0 20px 50px rgba(0,0,0,0.3);
+    }
+    /* Featured card — animated gradient border */
+    .service-card-featured {
+      background: var(--surface-2);
+      position: relative;
+      border: none;
+    }
+    .service-card-featured::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      border-radius: 16px;
+      padding: 1px;
+      background: conic-gradient(from var(--border-angle, 0deg),
+        var(--accent-gold), var(--border-hover), var(--accent-gold-dim), var(--accent-gold));
+      -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+      -webkit-mask-composite: xor;
+      mask-composite: exclude;
+      animation: rotateBorder 4s linear infinite;
+    }
+    @property --border-angle {
+      syntax: '<angle>';
+      initial-value: 0deg;
+      inherits: false;
+    }
+    @keyframes rotateBorder {
+      to { --border-angle: 360deg; }
+    }
+    .service-card-featured::after {
+      content: 'Most Popular';
+      position: absolute;
+      top: -1px;
+      left: 32px;
+      background: linear-gradient(135deg, var(--accent-gold), #e8c965);
+      color: var(--bg);
+      font-family: var(--font-mono);
+      font-size: 11px;
+      font-weight: 500;
+      padding: 6px 14px;
+      border-radius: 0 0 6px 6px;
+      letter-spacing: 0.5px;
+      text-transform: uppercase;
+    }
+    .service-card-coming {
+      opacity: 0.7;
+      transition: opacity 0.4s, border-color 0.3s, box-shadow 0.4s;
+    }
+    .service-card-coming:hover {
+      opacity: 0.9;
+    }
+    /* Private Beta badge for coming card */
+    .service-card-coming .service-beta-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      padding: 4px 12px;
+      border: 1px solid rgba(200,168,78,0.2);
+      border-radius: 100px;
+      font-family: var(--font-mono);
+      font-size: 9px;
+      color: var(--accent-gold);
+      letter-spacing: 1.5px;
+      text-transform: uppercase;
+      margin-bottom: 8px;
+    }
+    .service-tier {
+      font-family: var(--font-mono);
+      font-size: 11px;
+      color: var(--text-muted);
+      text-transform: uppercase;
+      letter-spacing: 2px;
+      margin-bottom: 8px;
+    }
+    .service-name {
+      font-family: var(--font-display);
+      font-size: clamp(28px, 3vw, 36px);
+      font-weight: 600;
+      color: var(--text-bright);
+      margin-bottom: 4px;
+    }
+    .service-tagline {
+      font-size: 14px;
+      color: var(--accent-gold);
+      margin-bottom: 16px;
+      font-weight: 500;
+    }
+    .service-desc {
+      font-size: 15px;
+      color: var(--text);
+      line-height: 1.6;
+      margin-bottom: 24px;
+    }
+    .service-list {
+      list-style: none;
+      padding: 0;
+      margin: 0 0 24px 0;
+      flex: 1;
+    }
+    .service-list li {
+      font-size: 14px;
+      color: var(--text-muted);
+      padding: 6px 0;
+      border-bottom: 1px solid var(--border);
+      position: relative;
+      padding-left: 20px;
+    }
+    .service-list li::before {
+      content: '\25C6';
+      position: absolute;
+      left: 0;
+      color: var(--accent-gold);
+      font-size: 8px;
+      top: 10px;
+      opacity: 0.6;
+    }
+    .service-list li:last-child { border-bottom: none; }
+    .service-price { margin-bottom: 8px; }
+    .price-amount {
+      font-family: var(--font-display);
+      font-size: 22px;
+      font-weight: 600;
+      color: var(--text-bright);
+      display: block;
+    }
+    .price-unit {
+      font-size: 13px;
+      color: var(--text-muted);
+    }
+    .service-delivery {
+      font-size: 12px;
+      color: var(--text-dim);
+      margin-bottom: 20px;
+      font-family: var(--font-mono);
+    }
+    .service-cta {
+      text-align: center;
+      justify-content: center;
+      width: 100%;
+    }
+    .btn-secondary {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      padding: 14px 32px;
+      border: 1px solid var(--border-hover);
+      color: var(--text);
+      font-weight: 500;
+      font-size: 15px;
+      border-radius: 6px;
+      text-decoration: none;
+      transition: all 0.3s;
+      background: transparent;
+      position: relative;
+      overflow: hidden;
+    }
+    .btn-secondary::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: -100%;
+      width: 50%;
+      height: 100%;
+      background: linear-gradient(90deg, transparent, rgba(200,168,78,0.1), transparent);
+      transform: skewX(-20deg);
+      transition: left 0.5s;
+    }
+    .btn-secondary:hover::before { left: 200%; }
+    .btn-secondary:hover {
+      border-color: var(--accent-gold);
+      color: var(--text-bright);
+    }
+    @media (max-width: 900px) {
+      .services-grid { grid-template-columns: 1fr; gap: 20px; }
+      .service-card { padding: 32px 24px; }
+    }
+
+    /* ============ APPLY / WAITLIST ============ */
+    .pricing-section {
+      padding: clamp(80px, 10vw, 120px) 0;
+      position: relative;
+    }
+    .pricing-section::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: radial-gradient(ellipse 70% 50% at 50% 30%, rgba(30,30,30,0.5), transparent);
+      pointer-events: none;
+    }
+    .pricing-header {
+      text-align: center;
+      margin-bottom: 56px;
+      position: relative;
+      z-index: 1;
+    }
+    .apply-card {
+      position: relative;
+      z-index: 1;
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      overflow: hidden;
+    }
+    .apply-inner {
+      display: grid;
+      grid-template-columns: 1.4fr 1fr;
+    }
+    .apply-left {
+      padding: 56px 48px;
+      border-right: 1px solid var(--border);
+    }
+    .apply-right {
+      padding: 56px 48px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: var(--surface-2);
+      position: relative;
+      overflow: hidden;
+    }
+    /* Subtle radial glow in apply right */
+    .apply-right::before {
+      content: '';
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      width: 300px;
+      height: 300px;
+      background: radial-gradient(circle, var(--accent-gold-glow), transparent 70%);
+      pointer-events: none;
+    }
+    .apply-scarcity {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      font-family: var(--font-mono);
+      font-size: 12px;
+      color: var(--text-muted);
+      letter-spacing: 0.5px;
+      text-transform: uppercase;
+      margin-bottom: 24px;
+      padding: 8px 16px;
+      border: 1px solid var(--border);
+      border-radius: 100px;
+      background: var(--bg);
+    }
+    .apply-scarcity strong {
+      color: var(--text-bright);
+      font-weight: 600;
+    }
+    .scarcity-dot {
+      width: 8px;
+      height: 8px;
+      border-radius: 50%;
+      background: #4ade80;
+      position: relative;
+      flex-shrink: 0;
+    }
+    .scarcity-dot::after {
+      content: '';
+      position: absolute;
+      inset: -3px;
+      border-radius: 50%;
+      border: 1px solid rgba(74, 222, 128, 0.3);
+      animation: dotPulse 2s ease infinite;
+    }
+    @keyframes dotPulse {
+      0%, 100% { transform: scale(1); opacity: 1; }
+      50% { transform: scale(1.6); opacity: 0; }
+    }
+    .apply-headline {
+      font-family: var(--font-display);
+      font-size: clamp(24px, 2.5vw, 32px);
+      font-weight: 600;
+      color: var(--text-bright);
+      line-height: 1.3;
+      margin-bottom: 16px;
+      letter-spacing: -0.5px;
+    }
+    .apply-desc {
+      font-size: 15px;
+      color: var(--text-muted);
+      line-height: 1.7;
+      margin-bottom: 32px;
+      max-width: 500px;
+    }
+    .apply-includes-label {
+      font-family: var(--font-mono);
+      font-size: 11px;
+      color: var(--accent-gold);
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      margin-bottom: 16px;
+    }
+    .apply-includes-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 10px;
+    }
+    .apply-include-item {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      font-size: 13px;
+      color: var(--text);
+    }
+    .apply-icon {
+      font-size: 6px;
+      color: var(--accent-gold);
+      flex-shrink: 0;
+    }
+    .apply-cta-box {
+      text-align: center;
+      width: 100%;
+      max-width: 320px;
+      position: relative;
+      z-index: 1;
+    }
+    .apply-cta-label {
+      font-family: var(--font-mono);
+      font-size: 10px;
+      color: var(--accent-gold);
+      letter-spacing: 3px;
+      text-transform: uppercase;
+      margin-bottom: 16px;
+    }
+    .apply-cta-box h4 {
+      font-family: var(--font-display);
+      font-size: clamp(22px, 2.2vw, 28px);
+      font-weight: 600;
+      color: var(--text-bright);
+      line-height: 1.3;
+      margin-bottom: 12px;
+    }
+    .apply-cta-desc {
+      font-size: 14px;
+      color: var(--text-muted);
+      line-height: 1.6;
+      margin-bottom: 28px;
+    }
+    .apply-btn { width: 100%; justify-content: center; }
+    .apply-footnote {
+      font-family: var(--font-mono);
+      font-size: 11px;
+      color: var(--text-dim);
+      margin-top: 16px;
+      letter-spacing: 0.5px;
+    }
+    @media (max-width: 900px) {
+      .apply-inner { grid-template-columns: 1fr; }
+      .apply-left { padding: 40px 28px; border-right: none; border-bottom: 1px solid var(--border); }
+      .apply-right { padding: 40px 28px; }
+      .apply-includes-grid { grid-template-columns: 1fr; }
+    }
+
+    /* ============ TOOLS MARQUEE ============ */
+    .marquee-section {
+      padding: 60px 0;
+      overflow: hidden;
+      border-top: 1px solid var(--border);
+      border-bottom: 1px solid var(--border);
+    }
+    .marquee-label {
+      text-align: center;
+      font-family: var(--font-mono);
+      font-size: 10px;
+      color: var(--text-dim);
+      letter-spacing: 3px;
+      text-transform: uppercase;
+      margin-bottom: 32px;
+    }
+    .marquee-track {
+      display: flex;
+      gap: 64px;
+      animation: marqueeScroll 25s linear infinite;
+      width: max-content;
+    }
+    .marquee-track:hover { animation-play-state: paused; }
+    @keyframes marqueeScroll {
+      0% { transform: translateX(0); }
+      100% { transform: translateX(-50%); }
+    }
+    .marquee-item {
+      font-family: var(--font-mono);
+      font-size: 13px;
+      font-weight: 500;
+      color: var(--text-dim);
+      letter-spacing: 1px;
+      white-space: nowrap;
+      transition: color 0.3s;
+    }
+    .marquee-item:hover { color: var(--accent-gold); }
+    .marquee-separator { color: var(--border); font-size: 10px; }
+
+    /* ============ TAGLINE ============ */
+    .tagline-section {
+      padding: 100px 0;
+      text-align: center;
+      position: relative;
+    }
+    .tagline {
+      font-family: var(--font-display);
+      font-size: clamp(14px, 2vw, 18px);
+      font-weight: 500;
+      color: var(--text-dim);
+      letter-spacing: clamp(6px, 2vw, 12px);
+      text-transform: uppercase;
+      transition: color 0.6s;
+    }
+    .tagline.visible { color: var(--accent-gold); }
+
+    /* ============ FINAL CTA ============ */
+    .final-cta {
+      text-align: center;
+      padding: clamp(80px, 12vw, 140px) 0;
+      position: relative;
+      overflow: hidden;
+    }
+    .final-cta::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: radial-gradient(ellipse 60% 60% at 50% 80%, rgba(200,168,78,0.04), transparent);
+      pointer-events: none;
+    }
+    .final-cta-content {
+      position: relative;
+      z-index: 1;
+    }
+    .final-cta h2 {
+      font-family: var(--font-display);
+      font-size: clamp(32px, 5vw, 56px);
+      font-weight: 700;
+      letter-spacing: -0.5px;
+      margin-bottom: 20px;
+      color: var(--text-bright);
+      line-height: 1.1;
+    }
+    .final-cta p {
+      font-size: 16px;
+      color: var(--text-muted);
+      margin-bottom: 44px;
+      max-width: 480px;
+      margin-left: auto;
+      margin-right: auto;
+      line-height: 1.7;
+    }
+
+    /* ============ FOOTER ============ */
+    footer {
+      border-top: 1px solid var(--border);
+      padding: 48px 0;
+    }
+    .footer-inner {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 16px;
+    }
+    .footer-brand {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+    .footer-logo-icon {
+      width: 24px;
+      height: 24px;
+      border-radius: 4px;
+      opacity: 0.6;
+    }
+    .footer-logo-text {
+      font-family: var(--font-display);
+      font-size: 13px;
+      font-weight: 600;
+      letter-spacing: 2px;
+      color: var(--text-dim);
+      text-transform: uppercase;
+    }
+    .footer-info {
+      font-family: var(--font-mono);
+      font-size: 11px;
+      color: var(--text-dim);
+      letter-spacing: 0.3px;
+    }
+    .footer-info a {
+      color: var(--accent-gold);
+      text-decoration: none;
+      transition: color 0.3s;
+    }
+    .footer-info a:hover { color: var(--text-bright); }
+    @media (max-width: 640px) {
+      .footer-inner { flex-direction: column; text-align: center; }
+    }
+
+    /* ============ UTILITY ============ */
+    .text-center { text-align: center; }
+    .mb-0 { margin-bottom: 0; }
+
+    /* ============ RESPONSIVE ============ */
+    @media (max-width: 768px) {
+      .hero { min-height: auto; padding: 140px 0 80px; }
+      .hero h1 { font-size: 32px; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Scroll Progress Bar -->
+  <div class="scroll-progress" id="scrollProgress"></div>
+
+  <!-- Mouse-Reactive Background Glow -->
+  <div class="mouse-glow" id="mouseGlow"></div>
+
+  <!-- Loader — Orchestrated -->
+  <div class="loader" id="loader">
+    <div class="loader-logo">ForgeVoice</div>
+    <div class="loader-tagline">AI Automation Studio</div>
+    <div class="loader-bar"></div>
+  </div>
+
+  <!-- Custom cursor -->
+  <div class="cursor-dot" id="cursorDot"></div>
+  <div class="cursor-ring" id="cursorRing"></div>
+
+  <!-- Navigation -->
+  <nav id="nav">
+    <div class="nav-inner">
+      <a href="#" class="logo-group">
+        <img src="favicon.png" alt="FV" class="logo-icon">
+        <div class="logo-text">
+          <div class="logo-name">ForgeVoice</div>
+          <div class="logo-sub">Studio</div>
+        </div>
+      </a>
+      <ul class="nav-links">
+        <li><a href="#services">Services</a></li>
+        <li><a href="#process">Process</a></li>
+        <li><a href="#pricing">Apply</a></li>
+        <li><a href="https://calendly.com/ashish-forgevoice/new-meeting" target="_blank" class="nav-cta">Book Free Audit</a></li>
+      </ul>
+      <button class="menu-toggle" id="menuToggle" aria-label="Menu">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </nav>
+
+  <!-- Mobile menu -->
+  <div class="mobile-menu" id="mobileMenu">
+    <a href="#services" onclick="closeMobileMenu()">Services</a>
+    <a href="#process" onclick="closeMobileMenu()">Process</a>
+    <a href="#pricing" onclick="closeMobileMenu()">Apply</a>
+    <a href="https://calendly.com/ashish-forgevoice/new-meeting" target="_blank" onclick="closeMobileMenu()">Book Audit</a>
+  </div>
+
+  <!-- Hero -->
+  <section class="hero">
+    <div class="hero-mesh">
+      <div class="hero-mesh-blob"></div>
+      <div class="hero-mesh-blob"></div>
+      <div class="hero-mesh-blob"></div>
+    </div>
+    <canvas class="hero-canvas" id="heroCanvas"></canvas>
+    <div class="hero-gradient"></div>
+    <div class="hero-content">
+      <div class="hero-badge" id="heroBadge">
+        <span class="hero-badge-dot"></span>
+        AI Automation Agency
+      </div>
+      <h1 id="heroTitle">
+        <span class="word" data-delay="0">We</span>
+        <span class="word" data-delay="60">build</span>
+        <span class="word word-em" data-delay="120">AI-powered</span>
+        <span class="word word-em" data-delay="180">systems</span>
+        <span class="word" data-delay="240">that</span>
+        <span class="word" data-delay="300">run</span>
+        <span class="word" data-delay="360">your</span>
+        <span class="word" data-delay="420">business</span>
+        <span class="word" data-delay="480">on</span>
+        <span class="word word-em" data-delay="540">autopilot</span>
+      </h1>
+      <p class="hero-desc" id="heroDesc">From custom automations to revenue-generating AI systems. We build, deploy, and scale the infrastructure your business needs to grow.</p>
+      <div class="hero-actions" id="heroActions">
+        <a href="https://calendly.com/ashish-forgevoice/new-meeting" target="_blank" class="btn-primary btn-magnetic">
+          Book Free Strategy Call
+          <span class="arrow">&rarr;</span>
+        </a>
+        <span class="hero-sub">3 projects/month. Custom-scoped. Results in 1-2 weeks.</span>
+      </div>
+    </div>
+    <div class="scroll-indicator" id="scrollIndicator">
+      <div class="scroll-line"></div>
+      <span class="scroll-text">Scroll</span>
+    </div>
+  </section>
+
+  <!-- Stats -->
+  <section class="stats-section">
+    <div class="container">
+      <div class="stats-grid reveal" id="statsGrid">
+        <div class="stat-item">
+          <div class="stat-number" data-target="200" data-suffix="+">0</div>
+          <div class="stat-label">Workflows audited</div>
+        </div>
+        <div class="stat-item">
+          <div class="stat-number" data-target="10" data-suffix="x" data-prefix="">0</div>
+          <div class="stat-label">Average ROI delivered</div>
+        </div>
+        <div class="stat-item">
+          <div class="stat-number" data-target="48" data-suffix="hr" data-prefix="<">0</div>
+          <div class="stat-label">First deliverable</div>
+        </div>
+      </div>
+      <!-- Trust Bar -->
+      <div class="trust-bar reveal stagger-2">
+        <p class="trust-text">Trusted by teams across Australia &amp; beyond</p>
+      </div>
+    </div>
+  </section>
+
+  <div class="section-divider"></div>
+
+  <!-- Problems -->
+  <section class="section">
+    <div class="container">
+      <div class="section-label reveal">The Problem</div>
+      <h2 class="section-title reveal stagger-1">Your team is drowning<br>in manual work</h2>
+      <p class="section-desc reveal stagger-2">Every hour spent on repetitive tasks is an hour not spent on strategy, sales, or serving your customers.</p>
+      <div class="problems-grid">
+        <div class="problem-card reveal stagger-3" data-tilt>
+          <div class="problem-icon">
+            <svg viewBox="0 0 24 24"><rect x="3" y="3" width="7" height="7" rx="1"/><rect x="14" y="3" width="7" height="7" rx="1"/><rect x="3" y="14" width="7" height="7" rx="1"/><rect x="14" y="14" width="7" height="7" rx="1"/></svg>
+          </div>
+          <h3>Copy-paste data between tools</h3>
+          <p>Moving data from CRM to spreadsheets to invoicing. Every day. By hand. One mistake can cost thousands.</p>
+        </div>
+        <div class="problem-card reveal stagger-4" data-tilt>
+          <div class="problem-icon">
+            <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+          </div>
+          <h3>Manual follow-ups that slip</h3>
+          <p>Leads go cold. Invoices go unpaid. Reminders never sent. Revenue leaks everywhere because humans forget.</p>
+        </div>
+        <div class="problem-card reveal stagger-5" data-tilt>
+          <div class="problem-icon">
+            <svg viewBox="0 0 24 24"><path d="M4 14a1 1 0 0 1-.78-1.63l9.9-10.2a.5.5 0 0 1 .86.46l-1.92 6.02A1 1 0 0 0 13 10h7a1 1 0 0 1 .78 1.63l-9.9 10.2a.5.5 0 0 1-.86-.46l1.92-6.02A1 1 0 0 0 11 14z"/></svg>
+          </div>
+          <h3>Tools that don't talk</h3>
+          <p>Slack, Sheets, HubSpot, Xero, Gmail &mdash; 10+ tools, zero connections. Your team IS the integration layer.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <div class="section-divider"></div>
+
+  <!-- Services — The 3 Plays -->
+  <section class="section services-section" id="services">
+    <div class="container">
+      <div class="text-center">
+        <div class="section-label reveal">What We Do</div>
+        <h2 class="section-title reveal stagger-1">Three ways we<br>grow your business</h2>
+        <p class="section-desc reveal stagger-2" style="margin-left:auto;margin-right:auto;">Whether you need a single automation or a full revenue engine, we have the right engagement model for you.</p>
+      </div>
+      <div class="services-grid">
+        <!-- Play 1: Build -->
+        <div class="service-card reveal stagger-3" data-tilt>
+          <div class="service-tier">Play 1</div>
+          <h3 class="service-name">Build</h3>
+          <p class="service-tagline">AI-Powered Automation Projects</p>
+          <p class="service-desc">We design and build custom automations that eliminate repetitive work, connect your tools, and save your team 10+ hours every week.</p>
+          <ul class="service-list">
+            <li>Custom workflow automation</li>
+            <li>Tool integrations (CRM, email, invoicing)</li>
+            <li>AI-powered data processing</li>
+            <li>Error handling &amp; monitoring</li>
+            <li>Full documentation &amp; training</li>
+          </ul>
+          <div class="service-price">
+            <span class="price-amount">Custom</span>
+            <span class="price-unit">Scoped to your workflow</span>
+          </div>
+          <p class="service-delivery">Delivered in 1-2 weeks. Fixed-price once scoped.</p>
+          <a href="https://calendly.com/ashish-forgevoice/new-meeting" target="_blank" class="btn-primary service-cta btn-magnetic">
+            Book Strategy Call
+            <span class="arrow">&rarr;</span>
+          </a>
+        </div>
+
+        <!-- Play 2: Deploy -->
+        <div class="service-card service-card-featured reveal stagger-4" data-tilt>
+          <div class="service-tier">Play 2</div>
+          <h3 class="service-name">Deploy</h3>
+          <p class="service-tagline">Revenue-Generating Systems</p>
+          <p class="service-desc">We build systems that directly generate revenue for your business &mdash; lead gen engines, sales automation, AI-powered client acquisition. You keep 75%.</p>
+          <ul class="service-list">
+            <li>Lead generation engines</li>
+            <li>Sales pipeline automation</li>
+            <li>AI-powered outreach systems</li>
+            <li>Content distribution infrastructure</li>
+            <li>CRM &amp; analytics dashboards</li>
+          </ul>
+          <div class="service-price">
+            <span class="price-amount">Revenue Share</span>
+            <span class="price-unit">You keep 75% of revenue generated</span>
+          </div>
+          <p class="service-delivery">We build it. We maintain it. You profit.</p>
+          <a href="https://calendly.com/ashish-forgevoice/new-meeting" target="_blank" class="btn-primary service-cta btn-magnetic">
+            Book Strategy Call
+            <span class="arrow">&rarr;</span>
+          </a>
+        </div>
+
+        <!-- Play 3: Platform -->
+        <div class="service-card service-card-coming reveal stagger-5" data-tilt>
+          <div class="service-tier">Play 3</div>
+          <span class="service-beta-badge">
+            <span class="hero-badge-dot" style="width:5px;height:5px;"></span>
+            Private Beta
+          </span>
+          <h3 class="service-name">Platform</h3>
+          <p class="service-tagline">AI Operating System</p>
+          <p class="service-desc">The full AI operating system for your business &mdash; agents, automation library, demand intelligence, and autonomous workflows. All in one platform.</p>
+          <ul class="service-list">
+            <li>AI agent framework</li>
+            <li>Demand intelligence engine</li>
+            <li>Pre-built automation templates</li>
+            <li>Autonomous business workflows</li>
+            <li>Real-time market signals</li>
+          </ul>
+          <div class="service-price">
+            <span class="price-amount">Founding Members</span>
+            <span class="price-unit">Apply for early access</span>
+          </div>
+          <p class="service-delivery">Currently accepting founding members.</p>
+          <a href="https://calendly.com/ashish-forgevoice/new-meeting" target="_blank" class="btn-secondary service-cta btn-magnetic">
+            Request Access
+            <span class="arrow">&rarr;</span>
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <div class="section-divider"></div>
+
+  <!-- Process -->
+  <section class="section" id="process">
+    <div class="container">
+      <div class="text-center">
+        <div class="section-label reveal">How It Works</div>
+        <h2 class="section-title reveal stagger-1">From chaos to autopilot<br>in 4 steps</h2>
+      </div>
+      <div class="process-grid reveal stagger-2" id="processGrid">
+        <div class="process-line-fill"></div>
+        <div class="process-step">
+          <div class="step-num">1</div>
+          <h3>Free Audit</h3>
+          <p>We map your workflows and find the biggest time-wasters. Takes 30 minutes.</p>
+        </div>
+        <div class="process-step">
+          <div class="step-num">2</div>
+          <h3>Custom Scope</h3>
+          <p>We design a tailored automation plan with clear deliverables and a fixed quote.</p>
+        </div>
+        <div class="process-step">
+          <div class="step-num">3</div>
+          <h3>We Build & Test</h3>
+          <p>We design, build, and test your automations. You approve before anything goes live.</p>
+        </div>
+        <div class="process-step">
+          <div class="step-num">4</div>
+          <h3>Launch & Support</h3>
+          <p>Go live with included support. Optional ongoing retainer available.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <div class="section-divider"></div>
+
+  <!-- Apply -->
+  <section class="pricing-section" id="pricing">
+    <div class="container">
+      <div class="pricing-header">
+        <div class="section-label reveal">Limited Availability</div>
+        <h2 class="section-title reveal stagger-1">Every engagement is scoped,<br>quoted, and built bespoke.</h2>
+      </div>
+
+      <div class="apply-card reveal-scale stagger-2">
+        <div class="apply-inner">
+          <div class="apply-left">
+            <p class="apply-scarcity">
+              <span class="scarcity-dot"></span>
+              We take on <strong>3 projects per month</strong>
+            </p>
+            <h3 class="apply-headline">No cookie-cutter packages.<br>Just what your business actually needs.</h3>
+            <p class="apply-desc">Every engagement starts with a free 30-minute strategy call. We identify your highest-ROI opportunities, design a tailored scope, and give you a clear proposal before any work begins.</p>
+            <div class="apply-includes">
+              <p class="apply-includes-label">Every project includes:</p>
+              <div class="apply-includes-grid">
+                <div class="apply-include-item">
+                  <span class="apply-icon">&#9670;</span>
+                  <span>Custom-built workflows</span>
+                </div>
+                <div class="apply-include-item">
+                  <span class="apply-icon">&#9670;</span>
+                  <span>Error handling &amp; monitoring</span>
+                </div>
+                <div class="apply-include-item">
+                  <span class="apply-icon">&#9670;</span>
+                  <span>Full documentation</span>
+                </div>
+                <div class="apply-include-item">
+                  <span class="apply-icon">&#9670;</span>
+                  <span>Team training session</span>
+                </div>
+                <div class="apply-include-item">
+                  <span class="apply-icon">&#9670;</span>
+                  <span>Fixed-price guarantee</span>
+                </div>
+                <div class="apply-include-item">
+                  <span class="apply-icon">&#9670;</span>
+                  <span>30-day post-launch support</span>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="apply-right">
+            <div class="apply-cta-box">
+              <p class="apply-cta-label">Start here</p>
+              <h4>Book your free<br>automation audit</h4>
+              <p class="apply-cta-desc">30 minutes. No obligation.<br>We map your workflows and show you exactly where to automate first.</p>
+              <a href="https://calendly.com/ashish-forgevoice/new-meeting" target="_blank" class="btn-primary apply-btn btn-magnetic">
+                Book Strategy Call
+                <span class="arrow">&rarr;</span>
+              </a>
+              <p class="apply-footnote">Custom-scoped projects &middot; Revenue-share available</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Tools Marquee -->
+  <section class="marquee-section">
+    <p class="marquee-label reveal">Tools We Automate</p>
+    <div class="marquee-track" id="marqueeTrack">
+      <span class="marquee-item">Zapier</span>
+      <span class="marquee-separator">&middot;</span>
+      <span class="marquee-item">n8n</span>
+      <span class="marquee-separator">&middot;</span>
+      <span class="marquee-item">Make.com</span>
+      <span class="marquee-separator">&middot;</span>
+      <span class="marquee-item">Slack</span>
+      <span class="marquee-separator">&middot;</span>
+      <span class="marquee-item">HubSpot</span>
+      <span class="marquee-separator">&middot;</span>
+      <span class="marquee-item">Google Sheets</span>
+      <span class="marquee-separator">&middot;</span>
+      <span class="marquee-item">Xero</span>
+      <span class="marquee-separator">&middot;</span>
+      <span class="marquee-item">Airtable</span>
+      <span class="marquee-separator">&middot;</span>
+      <span class="marquee-item">Gmail</span>
+      <span class="marquee-separator">&middot;</span>
+      <span class="marquee-item">Notion</span>
+      <span class="marquee-separator">&middot;</span>
+      <span class="marquee-item">WordPress</span>
+      <span class="marquee-separator">&middot;</span>
+      <span class="marquee-item">Shopify</span>
+      <span class="marquee-separator">&middot;</span>
+      <span class="marquee-item">Calendly</span>
+      <span class="marquee-separator">&middot;</span>
+      <span class="marquee-item">Stripe</span>
+      <span class="marquee-separator">&middot;</span>
+      <span class="marquee-item">Claude API</span>
+      <span class="marquee-separator">&middot;</span>
+      <span class="marquee-item">AI Agents</span>
+      <span class="marquee-separator">&middot;</span>
+      <span class="marquee-item">Supabase</span>
+      <span class="marquee-separator">&middot;</span>
+      <span class="marquee-item">OpenAI</span>
+      <span class="marquee-separator">&middot;</span>
+      <span class="marquee-item">Firebase</span>
+      <span class="marquee-separator">&middot;</span>
+      <!-- duplicate for seamless loop -->
+      <span class="marquee-item">Zapier</span>
+      <span class="marquee-separator">&middot;</span>
+      <span class="marquee-item">n8n</span>
+      <span class="marquee-separator">&middot;</span>
+      <span class="marquee-item">Make.com</span>
+      <span class="marquee-separator">&middot;</span>
+      <span class="marquee-item">Slack</span>
+      <span class="marquee-separator">&middot;</span>
+      <span class="marquee-item">HubSpot</span>
+      <span class="marquee-separator">&middot;</span>
+      <span class="marquee-item">Google Sheets</span>
+      <span class="marquee-separator">&middot;</span>
+      <span class="marquee-item">Xero</span>
+      <span class="marquee-separator">&middot;</span>
+      <span class="marquee-item">Airtable</span>
+      <span class="marquee-separator">&middot;</span>
+      <span class="marquee-item">Gmail</span>
+      <span class="marquee-separator">&middot;</span>
+      <span class="marquee-item">Notion</span>
+      <span class="marquee-separator">&middot;</span>
+      <span class="marquee-item">WordPress</span>
+      <span class="marquee-separator">&middot;</span>
+      <span class="marquee-item">Shopify</span>
+      <span class="marquee-separator">&middot;</span>
+      <span class="marquee-item">Calendly</span>
+      <span class="marquee-separator">&middot;</span>
+      <span class="marquee-item">Stripe</span>
+      <span class="marquee-separator">&middot;</span>
+      <span class="marquee-item">Claude API</span>
+      <span class="marquee-separator">&middot;</span>
+      <span class="marquee-item">AI Agents</span>
+      <span class="marquee-separator">&middot;</span>
+      <span class="marquee-item">Supabase</span>
+      <span class="marquee-separator">&middot;</span>
+      <span class="marquee-item">OpenAI</span>
+      <span class="marquee-separator">&middot;</span>
+      <span class="marquee-item">Firebase</span>
+      <span class="marquee-separator">&middot;</span>
+    </div>
+  </section>
+
+  <!-- Tagline -->
+  <section class="tagline-section">
+    <div class="container">
+      <p class="tagline reveal">Built for Leverage.</p>
+    </div>
+  </section>
+
+  <!-- Final CTA -->
+  <section class="final-cta" id="contact">
+    <div class="container">
+      <div class="final-cta-content">
+        <h2 class="reveal">Ready to build your<br>unfair advantage?</h2>
+        <p class="reveal stagger-1">Book a free 30-minute strategy call. We'll identify your highest-ROI opportunities and show you exactly how AI automation can transform your business.</p>
+        <div class="reveal stagger-2">
+          <a href="https://calendly.com/ashish-forgevoice/new-meeting" target="_blank" class="btn-primary btn-magnetic">
+            Book Free Strategy Call
+            <span class="arrow">&rarr;</span>
+          </a>
+        </div>
+        <p class="hero-sub reveal stagger-3" style="margin-top:20px;">No obligation. No sales pitch. Just a clear roadmap.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    <div class="container">
+      <div class="footer-inner">
+        <div class="footer-brand">
+          <img src="favicon.png" alt="FV" class="footer-logo-icon">
+          <span class="footer-logo-text">ForgeVoice Studio</span>
+        </div>
+        <div class="footer-info">
+          &copy; 2026 ForgeVoice Studio &middot; Canberra, Australia &middot;
+          <a href="https://calendly.com/ashish-forgevoice/new-meeting" target="_blank">Book a Call</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    /* ============================================
+       FORGEVOICE STUDIO — PREMIUM INTERACTIONS ENGINE
+       Orchestrated Load · 3D Tilt · Magnetic Buttons
+       Mouse-Reactive BG · Spring Counters · Parallax
+       ============================================ */
+
+    // ---- ORCHESTRATED PAGE LOAD ----
+    const loaderEl = document.getElementById('loader');
+    const navEl = document.getElementById('nav');
+
+    function orchestrateLoad() {
+      // Phase 1: Dismiss loader (after bar fills at ~1.1s)
+      setTimeout(() => {
+        loaderEl.classList.add('dismissing');
+      }, 1200);
+
+      // Phase 2: Show nav (after loader fades)
+      setTimeout(() => {
+        navEl.classList.add('loaded');
+      }, 1500);
+
+      // Phase 3: Hero elements in sequence
+      setTimeout(() => {
+        document.getElementById('heroBadge').classList.add('animate');
+      }, 1700);
+
+      // Phase 3b: Words clip-reveal with stagger
+      setTimeout(() => {
+        const words = document.querySelectorAll('.hero h1 .word');
+        words.forEach((word, i) => {
+          const delay = parseInt(word.dataset.delay) || 0;
+          setTimeout(() => {
+            word.classList.add('animate');
+            // Trigger underline on emphasized words
+            if (word.classList.contains('word-em')) {
+              setTimeout(() => word.classList.add('underline-animate'), 400);
+            }
+          }, delay);
+        });
+      }, 1900);
+
+      // Phase 3c: Description
+      setTimeout(() => {
+        document.getElementById('heroDesc').classList.add('animate');
+      }, 2500);
+
+      // Phase 3d: Actions
+      setTimeout(() => {
+        document.getElementById('heroActions').classList.add('animate');
+      }, 2700);
+
+      // Phase 3e: Scroll indicator
+      setTimeout(() => {
+        document.getElementById('scrollIndicator').classList.add('animate');
+      }, 3200);
+
+      // Phase 4: Clean up loader from DOM
+      setTimeout(() => {
+        loaderEl.classList.add('done');
+      }, 2000);
+
+      // Phase 5: Activate mouse glow
+      setTimeout(() => {
+        document.getElementById('mouseGlow').classList.add('active');
+      }, 2500);
+    }
+
+    orchestrateLoad();
+
+    // ---- CUSTOM CURSOR ----
+    const dot = document.getElementById('cursorDot');
+    const ring = document.getElementById('cursorRing');
+    const mouseGlow = document.getElementById('mouseGlow');
+    let mouseX = 0, mouseY = 0;
+    let ringX = 0, ringY = 0;
+    let glowX = 0, glowY = 0;
+
+    if (window.matchMedia('(hover: hover)').matches && window.innerWidth > 768) {
+      document.addEventListener('mousemove', e => {
+        mouseX = e.clientX;
+        mouseY = e.clientY;
+        dot.style.left = mouseX + 'px';
+        dot.style.top = mouseY + 'px';
+      });
+
+      // Click feedback
+      document.addEventListener('mousedown', () => dot.classList.add('clicking'));
+      document.addEventListener('mouseup', () => dot.classList.remove('clicking'));
+
+      function animateRing() {
+        ringX += (mouseX - ringX) * 0.12;
+        ringY += (mouseY - ringY) * 0.12;
+        ring.style.left = ringX + 'px';
+        ring.style.top = ringY + 'px';
+
+        // Mouse glow follows with even more lag
+        glowX += (mouseX - glowX) * 0.04;
+        glowY += (mouseY - glowY) * 0.04;
+        mouseGlow.style.left = glowX + 'px';
+        mouseGlow.style.top = (glowY + window.scrollY) + 'px';
+
+        requestAnimationFrame(animateRing);
+      }
+      animateRing();
+
+      document.querySelectorAll('a, button, [data-tilt]').forEach(el => {
+        el.addEventListener('mouseenter', () => ring.classList.add('hovering'));
+        el.addEventListener('mouseleave', () => ring.classList.remove('hovering'));
+      });
+    }
+
+    // ---- SCROLL PROGRESS BAR ----
+    const scrollProgress = document.getElementById('scrollProgress');
+    window.addEventListener('scroll', () => {
+      const scrollTop = window.scrollY;
+      const docHeight = document.documentElement.scrollHeight - window.innerHeight;
+      const progress = (scrollTop / docHeight) * 100;
+      scrollProgress.style.width = progress + '%';
+    }, { passive: true });
+
+    // ---- NAV SCROLL ----
+    const nav = document.getElementById('nav');
+    window.addEventListener('scroll', () => {
+      nav.classList.toggle('scrolled', window.scrollY > 60);
+    }, { passive: true });
+
+    // ---- MOBILE MENU ----
+    const menuToggle = document.getElementById('menuToggle');
+    const mobileMenu = document.getElementById('mobileMenu');
+
+    menuToggle.addEventListener('click', () => {
+      menuToggle.classList.toggle('active');
+      mobileMenu.classList.toggle('open');
+      document.body.style.overflow = mobileMenu.classList.contains('open') ? 'hidden' : '';
+    });
+
+    function closeMobileMenu() {
+      menuToggle.classList.remove('active');
+      mobileMenu.classList.remove('open');
+      document.body.style.overflow = '';
+    }
+
+    // ---- HERO CANVAS — ENHANCED PARTICLE NETWORK ----
+    const canvas = document.getElementById('heroCanvas');
+    const ctx = canvas.getContext('2d');
+    let particles = [];
+    let animFrame;
+    const isMobile = window.innerWidth < 768;
+    const particleCount = isMobile ? 35 : 80;
+    const connectionDistance = isMobile ? 100 : 160;
+    let canvasMouseX = -1000, canvasMouseY = -1000;
+
+    // Track mouse on canvas for interactive particles
+    if (!isMobile) {
+      canvas.parentElement.addEventListener('mousemove', e => {
+        const rect = canvas.getBoundingClientRect();
+        canvasMouseX = e.clientX - rect.left;
+        canvasMouseY = e.clientY - rect.top;
+      });
+      canvas.parentElement.addEventListener('mouseleave', () => {
+        canvasMouseX = -1000;
+        canvasMouseY = -1000;
+      });
+    }
+
+    function resizeCanvas() {
+      canvas.width = canvas.offsetWidth * (window.devicePixelRatio || 1);
+      canvas.height = canvas.offsetHeight * (window.devicePixelRatio || 1);
+      ctx.scale(window.devicePixelRatio || 1, window.devicePixelRatio || 1);
+    }
+
+    function createParticles() {
+      particles = [];
+      const w = canvas.offsetWidth;
+      const h = canvas.offsetHeight;
+      for (let i = 0; i < particleCount; i++) {
+        particles.push({
+          x: Math.random() * w,
+          y: Math.random() * h,
+          vx: (Math.random() - 0.5) * 0.35,
+          vy: (Math.random() - 0.5) * 0.35,
+          size: Math.random() * 1.8 + 0.5,
+          baseSize: Math.random() * 1.8 + 0.5
+        });
+      }
+    }
+
+    function drawNetwork() {
+      const w = canvas.offsetWidth;
+      const h = canvas.offsetHeight;
+      ctx.clearRect(0, 0, w, h);
+
+      // Update positions with mouse interaction
+      particles.forEach(p => {
+        // Mouse repulsion
+        const dx2 = canvasMouseX - p.x;
+        const dy2 = canvasMouseY - p.y;
+        const distMouse = Math.sqrt(dx2 * dx2 + dy2 * dy2);
+        if (distMouse < 120 && distMouse > 0) {
+          const force = (120 - distMouse) / 120 * 0.8;
+          p.vx -= (dx2 / distMouse) * force * 0.03;
+          p.vy -= (dy2 / distMouse) * force * 0.03;
+          p.size = p.baseSize * (1 + (120 - distMouse) / 120 * 0.8);
+        } else {
+          p.size += (p.baseSize - p.size) * 0.05;
+        }
+
+        // Damping
+        p.vx *= 0.998;
+        p.vy *= 0.998;
+
+        p.x += p.vx;
+        p.y += p.vy;
+        if (p.x < 0 || p.x > w) p.vx *= -1;
+        if (p.y < 0 || p.y > h) p.vy *= -1;
+      });
+
+      // Draw connections with gold tint near mouse
+      for (let i = 0; i < particles.length; i++) {
+        for (let j = i + 1; j < particles.length; j++) {
+          const dx = particles[i].x - particles[j].x;
+          const dy = particles[i].y - particles[j].y;
+          const dist = Math.sqrt(dx * dx + dy * dy);
+          if (dist < connectionDistance) {
+            const opacity = (1 - dist / connectionDistance) * 0.12;
+            const midX = (particles[i].x + particles[j].x) / 2;
+            const midY = (particles[i].y + particles[j].y) / 2;
+            const distFromMouse = Math.sqrt((midX - canvasMouseX) ** 2 + (midY - canvasMouseY) ** 2);
+
+            ctx.beginPath();
+            ctx.moveTo(particles[i].x, particles[i].y);
+            ctx.lineTo(particles[j].x, particles[j].y);
+
+            if (distFromMouse < 150) {
+              const goldBlend = 1 - distFromMouse / 150;
+              const r = Math.round(180 + goldBlend * 20);
+              const g = Math.round(180 + goldBlend * -12);
+              const b = Math.round(180 + goldBlend * -102);
+              ctx.strokeStyle = `rgba(${r}, ${g}, ${b}, ${opacity * (1 + goldBlend * 0.5)})`;
+            } else {
+              ctx.strokeStyle = `rgba(180, 180, 180, ${opacity})`;
+            }
+            ctx.lineWidth = 0.5;
+            ctx.stroke();
+          }
+        }
+      }
+
+      // Draw dots with glow near mouse
+      particles.forEach(p => {
+        const distFromMouse = Math.sqrt((p.x - canvasMouseX) ** 2 + (p.y - canvasMouseY) ** 2);
+        ctx.beginPath();
+        ctx.arc(p.x, p.y, p.size, 0, Math.PI * 2);
+
+        if (distFromMouse < 120) {
+          const glow = 1 - distFromMouse / 120;
+          ctx.fillStyle = `rgba(200, 168, 78, ${0.3 + glow * 0.4})`;
+          // Add glow
+          ctx.shadowBlur = 8 * glow;
+          ctx.shadowColor = 'rgba(200, 168, 78, 0.5)';
+        } else {
+          ctx.fillStyle = 'rgba(200, 200, 200, 0.2)';
+          ctx.shadowBlur = 0;
+        }
+        ctx.fill();
+        ctx.shadowBlur = 0;
+      });
+
+      animFrame = requestAnimationFrame(drawNetwork);
+    }
+
+    resizeCanvas();
+    createParticles();
+    drawNetwork();
+
+    window.addEventListener('resize', () => {
+      resizeCanvas();
+      createParticles();
+    });
+
+    // Pause canvas when not in viewport
+    const heroSection = document.querySelector('.hero');
+    const heroObserver = new IntersectionObserver(entries => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          if (!animFrame) drawNetwork();
+        } else {
+          cancelAnimationFrame(animFrame);
+          animFrame = null;
+        }
+      });
+    }, { threshold: 0 });
+    heroObserver.observe(heroSection);
+
+    // ---- SCROLL REVEAL ----
+    const revealElements = document.querySelectorAll('.reveal, .reveal-left, .reveal-scale');
+    const revealObserver = new IntersectionObserver(entries => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('visible');
+          revealObserver.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.1, rootMargin: '0px 0px -40px 0px' });
+
+    revealElements.forEach(el => revealObserver.observe(el));
+
+    // ---- STAT COUNTER — SPRING EASING ----
+    let statsCounted = false;
+    const statsObserver = new IntersectionObserver(entries => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting && !statsCounted) {
+          statsCounted = true;
+          document.querySelectorAll('.stat-number').forEach(el => {
+            const target = parseInt(el.dataset.target);
+            const suffix = el.dataset.suffix || '';
+            const prefix = el.dataset.prefix || '';
+            const duration = 1800;
+            const startTime = performance.now();
+
+            function easeOutExpo(t) {
+              return t === 1 ? 1 : 1 - Math.pow(2, -10 * t);
+            }
+
+            function updateCounter(currentTime) {
+              const elapsed = currentTime - startTime;
+              const progress = Math.min(elapsed / duration, 1);
+              const eased = easeOutExpo(progress);
+              const current = Math.round(eased * target);
+              el.textContent = prefix + current + suffix;
+
+              if (progress < 1) {
+                requestAnimationFrame(updateCounter);
+              }
+            }
+            requestAnimationFrame(updateCounter);
+          });
+        }
+      });
+    }, { threshold: 0.3 });
+    statsObserver.observe(document.getElementById('statsGrid'));
+
+    // ---- 3D TILT EFFECT ----
+    if (window.matchMedia('(hover: hover)').matches && window.innerWidth > 768) {
+      document.querySelectorAll('[data-tilt]').forEach(card => {
+        card.addEventListener('mousemove', e => {
+          const rect = card.getBoundingClientRect();
+          const x = ((e.clientX - rect.left) / rect.width) * 100;
+          const y = ((e.clientY - rect.top) / rect.height) * 100;
+
+          // Set CSS variables for glow
+          card.style.setProperty('--mouse-x', x + '%');
+          card.style.setProperty('--mouse-y', y + '%');
+
+          // Calculate tilt
+          const tiltX = ((y - 50) / 50) * -4;
+          const tiltY = ((x - 50) / 50) * 4;
+
+          card.style.transform = `perspective(800px) rotateX(${tiltX}deg) rotateY(${tiltY}deg) scale3d(1.02, 1.02, 1.02)`;
+        });
+
+        card.addEventListener('mouseleave', () => {
+          card.style.transform = 'perspective(800px) rotateX(0) rotateY(0) scale3d(1, 1, 1)';
+          card.style.transition = 'transform 0.6s var(--ease-out)';
+          setTimeout(() => { card.style.transition = ''; }, 600);
+        });
+
+        card.addEventListener('mouseenter', () => {
+          card.style.transition = 'none';
+        });
+      });
+    }
+
+    // ---- MAGNETIC BUTTONS ----
+    if (window.matchMedia('(hover: hover)').matches && window.innerWidth > 768) {
+      document.querySelectorAll('.btn-magnetic').forEach(btn => {
+        btn.addEventListener('mousemove', e => {
+          const rect = btn.getBoundingClientRect();
+          const x = e.clientX - rect.left - rect.width / 2;
+          const y = e.clientY - rect.top - rect.height / 2;
+          btn.style.transform = `translate(${x * 0.15}px, ${y * 0.15}px) translateY(-2px)`;
+        });
+
+        btn.addEventListener('mouseleave', () => {
+          btn.style.transform = '';
+          btn.style.transition = 'transform 0.4s var(--ease-spring)';
+          setTimeout(() => { btn.style.transition = ''; }, 400);
+        });
+
+        btn.addEventListener('mouseenter', () => {
+          btn.style.transition = 'transform 0.1s ease-out';
+        });
+      });
+    }
+
+    // ---- SMOOTH ANCHOR SCROLL ----
+    document.querySelectorAll('a[href^="#"]').forEach(a => {
+      a.addEventListener('click', e => {
+        const target = document.querySelector(a.getAttribute('href'));
+        if (target) {
+          e.preventDefault();
+          target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        }
+      });
+    });
+  </script>
+</body>
+</html>

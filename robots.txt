@@ -1,0 +1,5 @@
+User-agent: *
+Allow: /
+Disallow: /.vercel/
+
+Sitemap: https://workflow-auto.vercel.app/sitemap.xml
