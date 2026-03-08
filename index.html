@@ -354,23 +354,17 @@
       transition: background 0.3s var(--ease-out), color 0.3s var(--ease-out), border-color 0.3s var(--ease-out), transform 0.3s var(--ease-out);
       position: relative;
       overflow: hidden;
+      will-change: transform, background;
+      backface-visibility: hidden;
+      -webkit-backface-visibility: hidden;
+      transform: translateZ(0);
+      isolation: isolate;
     }
-    .nav-cta::before {
-      content: '';
-      position: absolute;
-      top: 0;
-      left: -100%;
-      width: 100%;
-      height: 100%;
-      background: linear-gradient(90deg, transparent, rgba(200,168,78,0.1), transparent);
-      transition: left 0.5s;
-    }
-    .nav-cta:hover::before { left: 100%; }
     .nav-cta:hover {
       background: var(--text-bright);
       color: #000;
       border-color: var(--text-bright);
-      transform: translateY(-1px);
+      transform: translateY(-1px) translateZ(0);
     }
 
     /* Mobile menu toggle */
