@@ -329,7 +329,7 @@
       transition: color 0.3s;
       position: relative;
     }
-    .nav-links a::after {
+    .nav-links a:not(.nav-cta)::after {
       content: '';
       position: absolute;
       bottom: -4px;
@@ -339,8 +339,8 @@
       background: var(--accent-gold);
       transition: width 0.3s var(--ease-out);
     }
-    .nav-links a:hover { color: var(--text-bright); }
-    .nav-links a:hover::after { width: 100%; }
+    .nav-links a:not(.nav-cta):hover { color: var(--text-bright); }
+    .nav-links a:not(.nav-cta):hover::after { width: 100%; }
     .nav-cta {
       background: transparent;
       color: var(--text-bright);
@@ -351,7 +351,7 @@
       font-size: 13px;
       letter-spacing: 0.5px;
       border: 1px solid var(--border-hover);
-      transition: all 0.3s var(--ease-out);
+      transition: background 0.3s var(--ease-out), color 0.3s var(--ease-out), border-color 0.3s var(--ease-out), transform 0.3s var(--ease-out);
       position: relative;
       overflow: hidden;
     }
