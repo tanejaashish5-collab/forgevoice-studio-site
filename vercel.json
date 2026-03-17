@@ -31,7 +31,8 @@
     }
   ],
   "rewrites": [
-    { "source": "/(.*)", "destination": "/index.html" }
+    { "source": "/", "destination": "/index.html" },
+    { "source": "/insights", "destination": "/insights.html" }
   ],
   "trailingSlash": false,
   "cleanUrls": true
