@@ -969,6 +969,158 @@
     }
     .trust-logo:hover { opacity: 0.8; }
 
+    /* ============ SOLUTIONS — ATLAS ============ */
+    .solutions-section {
+      background: var(--bg-elevated);
+    }
+
+    .solutions-filter {
+      display: flex;
+      gap: 12px;
+      justify-content: center;
+      margin: 40px 0;
+      flex-wrap: wrap;
+    }
+
+    .filter-btn {
+      padding: 10px 24px;
+      background: transparent;
+      border: 1px solid var(--border);
+      border-radius: 100px;
+      color: var(--text-muted);
+      font-size: 13px;
+      font-weight: 500;
+      cursor: pointer;
+      transition: all 0.3s;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+    }
+
+    .filter-btn:hover {
+      border-color: var(--text-bright);
+      color: var(--text-bright);
+    }
+
+    .filter-btn.active {
+      background: var(--accent-gold);
+      border-color: var(--accent-gold);
+      color: var(--bg);
+    }
+
+    .solutions-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 24px;
+      margin-top: 40px;
+    }
+
+    .solution-card {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 16px;
+      padding: 32px;
+      transition: all 0.3s var(--ease-out);
+      cursor: pointer;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .solution-card::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      height: 2px;
+      background: linear-gradient(90deg, var(--accent-gold), transparent);
+      opacity: 0;
+      transition: opacity 0.3s;
+    }
+
+    .solution-card:hover {
+      transform: translateY(-4px);
+      border-color: var(--accent-gold);
+      box-shadow: 0 20px 40px rgba(0,0,0,0.3);
+    }
+
+    .solution-card:hover::before {
+      opacity: 1;
+    }
+
+    .solution-card.hidden {
+      display: none;
+    }
+
+    .solution-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: start;
+      margin-bottom: 20px;
+    }
+
+    .solution-name {
+      font-size: 20px;
+      font-weight: 600;
+      color: var(--text-bright);
+      line-height: 1.2;
+    }
+
+    .solution-price {
+      font-size: 22px;
+      font-weight: 700;
+      color: var(--accent-gold);
+      font-family: var(--font-mono);
+    }
+
+    .solution-price span {
+      font-size: 13px;
+      color: var(--text-muted);
+      font-weight: 400;
+    }
+
+    .solution-industry {
+      display: inline-block;
+      padding: 4px 12px;
+      background: var(--accent-gold-glow);
+      border-radius: 100px;
+      font-size: 10px;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      color: var(--accent-gold);
+      margin-bottom: 16px;
+    }
+
+    .solution-features {
+      list-style: none;
+      margin: 20px 0;
+    }
+
+    .solution-features li {
+      padding: 8px 0;
+      color: var(--text-muted);
+      font-size: 14px;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .solution-features li::before {
+      content: '✓';
+      color: var(--accent-gold);
+      font-weight: 700;
+    }
+
+    .solution-roi {
+      padding-top: 16px;
+      border-top: 1px solid var(--border);
+      font-size: 13px;
+      color: var(--text-dim);
+    }
+
+    .solution-roi strong {
+      color: var(--text-bright);
+    }
+
     /* ============ PROCESS / HOW IT WORKS ============ */
     .process-grid {
       display: grid;
@@ -1585,6 +1737,10 @@
     @media (max-width: 768px) {
       .hero { min-height: auto; padding: 140px 0 80px; }
       .hero h1 { font-size: 32px; }
+      .solutions-grid { grid-template-columns: 1fr; }
+      .solution-card { padding: 24px; }
+      .solutions-filter { gap: 8px; }
+      .filter-btn { padding: 8px 16px; font-size: 12px; }
     }
   </style>
 </head>
@@ -1619,6 +1775,8 @@
       </a>
       <ul class="nav-links">
         <li><a href="#services">Services</a></li>
+        <li><a href="insights.html">Insights</a></li>
+        <li><a href="#solutions">Solutions</a></li>
         <li><a href="#process">Process</a></li>
         <li><a href="#pricing">Apply</a></li>
         <li><a href="https://calendly.com/ashish-forgevoice/new-meeting" target="_blank" class="nav-cta">Book Free Audit</a></li>
@@ -1632,6 +1790,8 @@
   <!-- Mobile menu -->
   <div class="mobile-menu" id="mobileMenu">
     <a href="#services" onclick="closeMobileMenu()">Services</a>
+    <a href="insights.html">Insights</a>
+    <a href="#solutions" onclick="closeMobileMenu()">Solutions</a>
     <a href="#process" onclick="closeMobileMenu()">Process</a>
     <a href="#pricing" onclick="closeMobileMenu()">Apply</a>
     <a href="https://calendly.com/ashish-forgevoice/new-meeting" target="_blank" onclick="closeMobileMenu()">Book Audit</a>
@@ -1826,6 +1986,218 @@
             <span class="arrow">&rarr;</span>
           </a>
         </div>
+      </div>
+    </div>
+  </section>
+
+  <div class="section-divider"></div>
+
+  <!-- Solutions - ATLAS Industry Automation -->
+  <section class="section solutions-section" id="solutions">
+    <div class="container">
+      <div class="text-center">
+        <div class="section-label reveal">Industry Solutions</div>
+        <h2 class="section-title reveal stagger-1">12 ATLAS automation<br>verticals ready to deploy</h2>
+        <p class="section-desc reveal stagger-2">Pre-built, industry-specific automation solutions. Pick your vertical, we handle the rest.</p>
+      </div>
+
+      <!-- Filter Buttons -->
+      <div class="solutions-filter reveal stagger-3">
+        <button class="filter-btn active" data-filter="all">All Solutions</button>
+        <button class="filter-btn" data-filter="professional">Professional</button>
+        <button class="filter-btn" data-filter="local">Local Services</button>
+        <button class="filter-btn" data-filter="b2b">B2B Operations</button>
+      </div>
+
+      <!-- Solutions Grid -->
+      <div class="solutions-grid">
+        <!-- 1. Review Autopilot -->
+        <div class="solution-card reveal stagger-4" data-category="professional">
+          <div class="solution-industry">Professional Services</div>
+          <div class="solution-header">
+            <h3 class="solution-name">Review Autopilot</h3>
+            <div class="solution-price">$497<span>/mo</span></div>
+          </div>
+          <ul class="solution-features">
+            <li>AI review response generation</li>
+            <li>Multi-platform monitoring</li>
+            <li>Sentiment analysis dashboard</li>
+          </ul>
+          <div class="solution-roi"><strong>ROI:</strong> 85% increase in 5-star reviews</div>
+        </div>
+
+        <!-- 2. Client Intake Automation -->
+        <div class="solution-card reveal stagger-4" data-category="professional">
+          <div class="solution-industry">Professional Services</div>
+          <div class="solution-header">
+            <h3 class="solution-name">Client Intake Automation</h3>
+            <div class="solution-price">$397<span>/mo</span></div>
+          </div>
+          <ul class="solution-features">
+            <li>Smart form processing</li>
+            <li>Document extraction AI</li>
+            <li>CRM auto-population</li>
+          </ul>
+          <div class="solution-roi"><strong>ROI:</strong> 3 hours saved per client</div>
+        </div>
+
+        <!-- 3. AR Collections AI -->
+        <div class="solution-card reveal stagger-4" data-category="b2b">
+          <div class="solution-industry">B2B Operations</div>
+          <div class="solution-header">
+            <h3 class="solution-name">AR Collections AI</h3>
+            <div class="solution-price">$597<span>/mo</span></div>
+          </div>
+          <ul class="solution-features">
+            <li>Automated payment reminders</li>
+            <li>Intelligent dunning sequences</li>
+            <li>Payment prediction scoring</li>
+          </ul>
+          <div class="solution-roi"><strong>ROI:</strong> 40% reduction in DSO</div>
+        </div>
+
+        <!-- 4. Home Services Dispatcher -->
+        <div class="solution-card reveal stagger-4" data-category="local">
+          <div class="solution-industry">Local Services</div>
+          <div class="solution-header">
+            <h3 class="solution-name">Home Services Dispatcher</h3>
+            <div class="solution-price">$297<span>/mo</span></div>
+          </div>
+          <ul class="solution-features">
+            <li>Smart job routing</li>
+            <li>Real-time tech tracking</li>
+            <li>Customer SMS updates</li>
+          </ul>
+          <div class="solution-roi"><strong>ROI:</strong> 25% more jobs per day</div>
+        </div>
+
+        <!-- 5. AI Bookkeeping Assistant -->
+        <div class="solution-card reveal stagger-4" data-category="professional">
+          <div class="solution-industry">Professional Services</div>
+          <div class="solution-header">
+            <h3 class="solution-name">AI Bookkeeping Assistant</h3>
+            <div class="solution-price">$197<span>/mo</span></div>
+          </div>
+          <ul class="solution-features">
+            <li>Receipt OCR processing</li>
+            <li>Expense categorization</li>
+            <li>QuickBooks sync</li>
+          </ul>
+          <div class="solution-roi"><strong>ROI:</strong> 10 hours saved weekly</div>
+        </div>
+
+        <!-- 6. Legal Document Processor -->
+        <div class="solution-card reveal stagger-4" data-category="professional">
+          <div class="solution-industry">Professional Services</div>
+          <div class="solution-header">
+            <h3 class="solution-name">Legal Document Processor</h3>
+            <div class="solution-price">$797<span>/mo</span></div>
+          </div>
+          <ul class="solution-features">
+            <li>Contract data extraction</li>
+            <li>Clause comparison AI</li>
+            <li>Deadline tracking system</li>
+          </ul>
+          <div class="solution-roi"><strong>ROI:</strong> 80% faster review cycles</div>
+        </div>
+
+        <!-- 7. Healthcare Intake Flow -->
+        <div class="solution-card reveal stagger-4" data-category="professional">
+          <div class="solution-industry">Professional Services</div>
+          <div class="solution-header">
+            <h3 class="solution-name">Healthcare Intake Flow</h3>
+            <div class="solution-price">$697<span>/mo</span></div>
+          </div>
+          <ul class="solution-features">
+            <li>Insurance verification</li>
+            <li>Medical history parsing</li>
+            <li>Appointment scheduling AI</li>
+          </ul>
+          <div class="solution-roi"><strong>ROI:</strong> 45-min intake → 3 mins</div>
+        </div>
+
+        <!-- 8. Real Estate Lead Nurture -->
+        <div class="solution-card reveal stagger-4" data-category="local">
+          <div class="solution-industry">Local Services</div>
+          <div class="solution-header">
+            <h3 class="solution-name">Real Estate Lead Nurture</h3>
+            <div class="solution-price">$497<span>/mo</span></div>
+          </div>
+          <ul class="solution-features">
+            <li>MLS alert automation</li>
+            <li>Drip campaign AI</li>
+            <li>Showing scheduler bot</li>
+          </ul>
+          <div class="solution-roi"><strong>ROI:</strong> 3x conversion rate</div>
+        </div>
+
+        <!-- 9. E-commerce Operations -->
+        <div class="solution-card reveal stagger-4" data-category="b2b">
+          <div class="solution-industry">B2B Operations</div>
+          <div class="solution-header">
+            <h3 class="solution-name">E-commerce Operations</h3>
+            <div class="solution-price">$397<span>/mo</span></div>
+          </div>
+          <ul class="solution-features">
+            <li>Inventory sync automation</li>
+            <li>Order routing logic</li>
+            <li>Return processing AI</li>
+          </ul>
+          <div class="solution-roi"><strong>ROI:</strong> 60% ops cost reduction</div>
+        </div>
+
+        <!-- 10. SaaS User Onboarding -->
+        <div class="solution-card reveal stagger-4" data-category="b2b">
+          <div class="solution-industry">B2B Operations</div>
+          <div class="solution-header">
+            <h3 class="solution-name">SaaS User Onboarding</h3>
+            <div class="solution-price">$297<span>/mo</span></div>
+          </div>
+          <ul class="solution-features">
+            <li>Personalized onboarding flows</li>
+            <li>Usage tracking & alerts</li>
+            <li>Churn prediction AI</li>
+          </ul>
+          <div class="solution-roi"><strong>ROI:</strong> 40% better retention</div>
+        </div>
+
+        <!-- 11. Restaurant Operations Hub -->
+        <div class="solution-card reveal stagger-4" data-category="local">
+          <div class="solution-industry">Local Services</div>
+          <div class="solution-header">
+            <h3 class="solution-name">Restaurant Operations Hub</h3>
+            <div class="solution-price">$597<span>/mo</span></div>
+          </div>
+          <ul class="solution-features">
+            <li>Multi-platform order sync</li>
+            <li>Inventory depletion tracking</li>
+            <li>Staff scheduling AI</li>
+          </ul>
+          <div class="solution-roi"><strong>ROI:</strong> 20% food cost savings</div>
+        </div>
+
+        <!-- 12. Education Admin Suite -->
+        <div class="solution-card reveal stagger-4" data-category="professional">
+          <div class="solution-industry">Professional Services</div>
+          <div class="solution-header">
+            <h3 class="solution-name">Education Admin Suite</h3>
+            <div class="solution-price">$897<span>/mo</span></div>
+          </div>
+          <ul class="solution-features">
+            <li>Enrollment automation</li>
+            <li>Parent communication hub</li>
+            <li>Attendance tracking AI</li>
+          </ul>
+          <div class="solution-roi"><strong>ROI:</strong> 15 admin hours/week saved</div>
+        </div>
+      </div>
+
+      <!-- CTA -->
+      <div class="text-center" style="margin-top: 60px;">
+        <a href="insights.html" class="btn-primary reveal">
+          Explore Our Capabilities
+          <span class="arrow">→</span>
+        </a>
       </div>
     </div>
   </section>
@@ -2061,6 +2433,38 @@
        Orchestrated Load · 3D Tilt · Magnetic Buttons
        Mouse-Reactive BG · Spring Counters · Parallax
        ============================================ */
+
+    // ---- SOLUTIONS FILTER FUNCTIONALITY ----
+    document.addEventListener('DOMContentLoaded', function() {
+      const filterButtons = document.querySelectorAll('.filter-btn');
+      const solutionCards = document.querySelectorAll('.solution-card');
+
+      if (filterButtons.length > 0 && solutionCards.length > 0) {
+        filterButtons.forEach(button => {
+          button.addEventListener('click', function() {
+            // Update active button
+            filterButtons.forEach(btn => btn.classList.remove('active'));
+            this.classList.add('active');
+
+            // Get filter value
+            const filter = this.getAttribute('data-filter');
+
+            // Filter cards
+            solutionCards.forEach(card => {
+              if (filter === 'all' || card.getAttribute('data-category') === filter) {
+                card.style.display = '';
+                // Re-trigger reveal animation
+                setTimeout(() => {
+                  card.classList.add('visible');
+                }, 100);
+              } else {
+                card.style.display = 'none';
+              }
+            });
+          });
+        });
+      }
+    });
 
     // ---- ORCHESTRATED PAGE LOAD ----
     const loaderEl = document.getElementById('loader');

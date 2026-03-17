@@ -1,0 +1,986 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Insights | ForgeVoice Studio - AI Automation Intelligence</title>
+  <meta name="description" content="Strategic insights on AI automation, business transformation, and operational excellence. Learn how ForgeVoice Studio solves critical business pain points.">
+  <meta property="og:title" content="Insights | ForgeVoice Studio">
+  <meta property="og:description" content="Strategic insights on AI automation and business transformation">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://forgevoicestudio.com/insights">
+  <link rel="icon" type="image/png" href="favicon.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --bg: #000000;
+      --bg-elevated: #060606;
+      --surface: #0a0a0a;
+      --surface-2: #0f0f0f;
+      --surface-3: #141414;
+      --border: #1a1a1a;
+      --border-hover: #2a2a2a;
+      --border-active: #3a3a3a;
+      --text: #d4d4d4;
+      --text-bright: #f5f5f5;
+      --text-muted: #777777;
+      --text-dim: #444444;
+      --accent: #c0c0c0;
+      --accent-bright: #ffffff;
+      --accent-gold: #C8A84E;
+      --accent-gold-dim: rgba(200, 168, 78, 0.15);
+      --accent-gold-glow: rgba(200, 168, 78, 0.08);
+      --glow: rgba(200, 200, 200, 0.06);
+      --glow-strong: rgba(200, 200, 200, 0.12);
+      --radius: 16px;
+      --radius-sm: 8px;
+      --radius-xs: 4px;
+      --ease-out: cubic-bezier(0.16, 1, 0.3, 1);
+      --ease-spring: cubic-bezier(0.34, 1.56, 0.64, 1);
+      --ease-expo: cubic-bezier(0.19, 1, 0.22, 1);
+      --font-display: 'Playfair Display', Georgia, serif;
+      --font-body: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, sans-serif;
+      --font-mono: 'JetBrains Mono', 'SF Mono', monospace;
+    }
+
+    *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      font-family: var(--font-body);
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.6;
+      -webkit-font-smoothing: antialiased;
+      overflow-x: hidden;
+    }
+
+    ::selection { background: rgba(200,168,78,0.25); color: var(--text-bright); }
+
+    /* Navigation */
+    .nav {
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      padding: 20px 40px;
+      background: rgba(0,0,0,0.8);
+      backdrop-filter: blur(20px);
+      border-bottom: 1px solid var(--border);
+      z-index: 1000;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .nav-logo {
+      font-family: var(--font-display);
+      font-size: 20px;
+      font-weight: 600;
+      letter-spacing: 2px;
+      color: var(--text-bright);
+      text-decoration: none;
+      text-transform: uppercase;
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 32px;
+      align-items: center;
+      list-style: none;
+    }
+
+    .nav-links a {
+      color: var(--text-muted);
+      text-decoration: none;
+      font-size: 13px;
+      font-weight: 500;
+      position: relative;
+      transition: color 0.3s;
+    }
+
+    .nav-links a:hover { color: var(--text-bright); }
+
+    .nav-links a.active {
+      color: var(--accent-gold);
+    }
+
+    /* Container */
+    .container {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 40px;
+    }
+
+    /* Hero Section */
+    .hero {
+      padding: 180px 0 100px;
+      text-align: center;
+    }
+
+    .hero-badge {
+      display: inline-block;
+      padding: 8px 20px;
+      background: var(--accent-gold-glow);
+      border: 1px solid var(--accent-gold);
+      border-radius: 100px;
+      font-size: 11px;
+      text-transform: uppercase;
+      letter-spacing: 2px;
+      color: var(--accent-gold);
+      margin-bottom: 32px;
+    }
+
+    .hero-title {
+      font-family: var(--font-display);
+      font-size: clamp(48px, 8vw, 80px);
+      font-weight: 500;
+      line-height: 1.1;
+      color: var(--text-bright);
+      margin-bottom: 24px;
+    }
+
+    .hero-subtitle {
+      font-size: 20px;
+      color: var(--text-muted);
+      max-width: 600px;
+      margin: 0 auto 48px;
+    }
+
+    /* Stats Row */
+    .stats-row {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 40px;
+      padding: 48px 0;
+      border-top: 1px solid var(--border);
+      border-bottom: 1px solid var(--border);
+    }
+
+    .stat-item {
+      text-align: center;
+    }
+
+    .stat-number {
+      font-size: 42px;
+      font-weight: 700;
+      color: var(--accent-gold);
+      font-family: var(--font-mono);
+    }
+
+    .stat-label {
+      font-size: 14px;
+      color: var(--text-muted);
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      margin-top: 8px;
+    }
+
+    /* Section */
+    .section {
+      padding: 100px 0;
+    }
+
+    .section-header {
+      text-align: center;
+      margin-bottom: 64px;
+    }
+
+    .section-label {
+      font-size: 11px;
+      text-transform: uppercase;
+      letter-spacing: 2px;
+      color: var(--accent-gold);
+      margin-bottom: 16px;
+    }
+
+    .section-title {
+      font-family: var(--font-display);
+      font-size: 48px;
+      font-weight: 500;
+      line-height: 1.2;
+      color: var(--text-bright);
+      margin-bottom: 20px;
+    }
+
+    .section-desc {
+      font-size: 18px;
+      color: var(--text-muted);
+      max-width: 600px;
+      margin: 0 auto;
+    }
+
+    /* Pain Points Grid */
+    .pain-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 32px;
+      margin-top: 64px;
+    }
+
+    .pain-card {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 32px;
+      transition: all 0.3s var(--ease-out);
+    }
+
+    .pain-card:hover {
+      transform: translateY(-4px);
+      border-color: var(--accent-gold);
+      box-shadow: 0 20px 40px rgba(0,0,0,0.3);
+    }
+
+    .pain-icon {
+      width: 48px;
+      height: 48px;
+      background: var(--accent-gold-glow);
+      border-radius: 12px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 24px;
+      margin-bottom: 20px;
+    }
+
+    .pain-title {
+      font-size: 20px;
+      font-weight: 600;
+      color: var(--text-bright);
+      margin-bottom: 12px;
+    }
+
+    .pain-desc {
+      font-size: 14px;
+      color: var(--text-muted);
+      line-height: 1.6;
+    }
+
+    /* Capabilities */
+    .capabilities {
+      background: var(--bg-elevated);
+    }
+
+    .capability-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 48px;
+      margin-top: 64px;
+    }
+
+    .capability-item {
+      display: flex;
+      gap: 24px;
+    }
+
+    .capability-icon {
+      width: 56px;
+      height: 56px;
+      background: linear-gradient(135deg, var(--accent-gold), var(--accent-gold-dim));
+      border-radius: 12px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+      font-size: 28px;
+    }
+
+    .capability-content h3 {
+      font-size: 18px;
+      font-weight: 600;
+      color: var(--text-bright);
+      margin-bottom: 8px;
+    }
+
+    .capability-content p {
+      font-size: 14px;
+      color: var(--text-muted);
+      line-height: 1.6;
+    }
+
+    /* Case Studies */
+    .case-studies {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 40px;
+      margin-top: 64px;
+    }
+
+    .case-card {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 40px 32px;
+      position: relative;
+      overflow: hidden;
+      transition: all 0.3s var(--ease-out);
+    }
+
+    .case-card::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      height: 4px;
+      background: linear-gradient(90deg, var(--accent-gold), transparent);
+    }
+
+    .case-card:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 20px 40px rgba(0,0,0,0.3);
+    }
+
+    .case-industry {
+      font-size: 12px;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      color: var(--accent-gold);
+      margin-bottom: 16px;
+    }
+
+    .case-result {
+      font-size: 36px;
+      font-weight: 700;
+      color: var(--text-bright);
+      font-family: var(--font-mono);
+      margin-bottom: 12px;
+    }
+
+    .case-desc {
+      font-size: 14px;
+      color: var(--text-muted);
+      line-height: 1.6;
+    }
+
+    /* Blog Grid */
+    .blog-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 40px;
+      margin-top: 64px;
+    }
+
+    .blog-card {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 32px;
+      transition: all 0.3s var(--ease-out);
+      cursor: pointer;
+    }
+
+    .blog-card:hover {
+      border-color: var(--accent-gold);
+      transform: translateY(-4px);
+    }
+
+    .blog-date {
+      font-size: 12px;
+      color: var(--text-dim);
+      margin-bottom: 16px;
+    }
+
+    .blog-title {
+      font-size: 24px;
+      font-weight: 600;
+      color: var(--text-bright);
+      margin-bottom: 16px;
+      line-height: 1.3;
+    }
+
+    .blog-excerpt {
+      font-size: 14px;
+      color: var(--text-muted);
+      line-height: 1.6;
+      margin-bottom: 20px;
+    }
+
+    .blog-link {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      color: var(--accent-gold);
+      text-decoration: none;
+      font-size: 14px;
+      font-weight: 500;
+      transition: gap 0.3s;
+    }
+
+    .blog-link:hover {
+      gap: 12px;
+    }
+
+    /* Tech Stack */
+    .tech-stack {
+      background: var(--bg-elevated);
+    }
+
+    .tech-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 24px;
+      margin-top: 64px;
+    }
+
+    .tech-item {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: var(--radius-sm);
+      padding: 20px;
+      text-align: center;
+      transition: all 0.3s;
+    }
+
+    .tech-item:hover {
+      transform: translateY(-2px);
+      border-color: var(--accent-gold);
+    }
+
+    .tech-name {
+      font-size: 14px;
+      font-weight: 600;
+      color: var(--text-bright);
+      margin-bottom: 4px;
+    }
+
+    .tech-category {
+      font-size: 11px;
+      color: var(--text-dim);
+      text-transform: uppercase;
+      letter-spacing: 1px;
+    }
+
+    /* ROI Calculator */
+    .roi-calculator {
+      background: var(--surface);
+      border: 1px solid var(--accent-gold);
+      border-radius: var(--radius);
+      padding: 48px;
+      margin-top: 64px;
+      text-align: center;
+    }
+
+    .roi-title {
+      font-size: 32px;
+      font-weight: 600;
+      color: var(--text-bright);
+      margin-bottom: 16px;
+    }
+
+    .roi-desc {
+      font-size: 16px;
+      color: var(--text-muted);
+      margin-bottom: 40px;
+    }
+
+    .roi-inputs {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 32px;
+      margin-bottom: 40px;
+    }
+
+    .roi-input-group {
+      text-align: left;
+    }
+
+    .roi-input-label {
+      font-size: 12px;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      color: var(--text-muted);
+      margin-bottom: 8px;
+    }
+
+    .roi-input {
+      width: 100%;
+      padding: 12px 16px;
+      background: var(--bg);
+      border: 1px solid var(--border);
+      border-radius: var(--radius-sm);
+      color: var(--text-bright);
+      font-size: 16px;
+      font-family: var(--font-mono);
+      transition: border-color 0.3s;
+    }
+
+    .roi-input:focus {
+      outline: none;
+      border-color: var(--accent-gold);
+    }
+
+    .roi-result {
+      padding: 32px;
+      background: var(--accent-gold-glow);
+      border: 1px solid var(--accent-gold);
+      border-radius: var(--radius-sm);
+    }
+
+    .roi-result-label {
+      font-size: 14px;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      color: var(--accent-gold);
+      margin-bottom: 12px;
+    }
+
+    .roi-result-value {
+      font-size: 48px;
+      font-weight: 700;
+      color: var(--accent-gold);
+      font-family: var(--font-mono);
+    }
+
+    /* CTA Section */
+    .cta-section {
+      padding: 120px 0;
+      text-align: center;
+      background: linear-gradient(180deg, transparent, var(--accent-gold-glow));
+    }
+
+    .cta-title {
+      font-family: var(--font-display);
+      font-size: 56px;
+      font-weight: 500;
+      color: var(--text-bright);
+      margin-bottom: 24px;
+    }
+
+    .cta-desc {
+      font-size: 20px;
+      color: var(--text-muted);
+      margin-bottom: 48px;
+    }
+
+    .cta-buttons {
+      display: flex;
+      gap: 20px;
+      justify-content: center;
+    }
+
+    .btn {
+      padding: 16px 32px;
+      font-size: 14px;
+      font-weight: 600;
+      text-decoration: none;
+      border-radius: var(--radius-sm);
+      transition: all 0.3s;
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .btn-primary {
+      background: var(--accent-gold);
+      color: var(--bg);
+      border: 1px solid var(--accent-gold);
+    }
+
+    .btn-primary:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 10px 30px rgba(200,168,78,0.3);
+    }
+
+    .btn-secondary {
+      background: transparent;
+      color: var(--text-bright);
+      border: 1px solid var(--border);
+    }
+
+    .btn-secondary:hover {
+      border-color: var(--text-bright);
+      background: var(--surface);
+    }
+
+    /* Footer */
+    .footer {
+      padding: 40px 0;
+      border-top: 1px solid var(--border);
+      text-align: center;
+      font-size: 13px;
+      color: var(--text-dim);
+    }
+
+    /* Responsive */
+    @media (max-width: 768px) {
+      .nav-links { display: none; }
+      .stats-row { grid-template-columns: 1fr; gap: 24px; }
+      .pain-grid { grid-template-columns: 1fr; }
+      .capability-grid { grid-template-columns: 1fr; }
+      .case-studies { grid-template-columns: 1fr; }
+      .blog-grid { grid-template-columns: 1fr; }
+      .tech-grid { grid-template-columns: repeat(2, 1fr); }
+      .roi-inputs { grid-template-columns: 1fr; }
+      .cta-buttons { flex-direction: column; }
+    }
+  </style>
+</head>
+<body>
+  <!-- Navigation -->
+  <nav class="nav">
+    <a href="index.html" class="nav-logo">ForgeVoice</a>
+    <ul class="nav-links">
+      <li><a href="index.html#services">Services</a></li>
+      <li><a href="insights.html" class="active">Insights</a></li>
+      <li><a href="index.html#solutions">Solutions</a></li>
+      <li><a href="index.html#process">Process</a></li>
+      <li><a href="index.html#pricing">Apply</a></li>
+    </ul>
+  </nav>
+
+  <!-- Hero -->
+  <section class="hero">
+    <div class="container">
+      <div class="hero-badge">Strategic Intelligence</div>
+      <h1 class="hero-title">The Automation<br>Advantage</h1>
+      <p class="hero-subtitle">How AI transforms business operations from chaos to clarity</p>
+
+      <div class="stats-row">
+        <div class="stat-item">
+          <div class="stat-number">73%</div>
+          <div class="stat-label">Cost Reduction</div>
+        </div>
+        <div class="stat-item">
+          <div class="stat-number">5x</div>
+          <div class="stat-label">Faster Processing</div>
+        </div>
+        <div class="stat-item">
+          <div class="stat-number">99.7%</div>
+          <div class="stat-label">Accuracy Rate</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Pain Points -->
+  <section class="section">
+    <div class="container">
+      <div class="section-header">
+        <div class="section-label">The Problems</div>
+        <h2 class="section-title">Pain Points We Solve</h2>
+        <p class="section-desc">The operational nightmares keeping you up at night</p>
+      </div>
+
+      <div class="pain-grid">
+        <div class="pain-card">
+          <div class="pain-icon">⚠️</div>
+          <h3 class="pain-title">Manual Data Entry Hell</h3>
+          <p class="pain-desc">Your team wastes 40% of their time on repetitive data entry, copying between systems, and fixing human errors.</p>
+        </div>
+
+        <div class="pain-card">
+          <div class="pain-icon">💸</div>
+          <h3 class="pain-title">Lost Revenue Leaks</h3>
+          <p class="pain-desc">Money slips through process gaps - abandoned carts, missed follow-ups, delayed invoicing, uncollected payments.</p>
+        </div>
+
+        <div class="pain-card">
+          <div class="pain-icon">📈</div>
+          <h3 class="pain-title">Scaling Nightmares</h3>
+          <p class="pain-desc">Growth bottlenecked by manual processes that worked at 10 customers but break at 100.</p>
+        </div>
+
+        <div class="pain-card">
+          <div class="pain-icon">🔥</div>
+          <h3 class="pain-title">Human Error Cascade</h3>
+          <p class="pain-desc">One mistake compounds into many - wrong data entry leads to wrong decisions leads to lost customers.</p>
+        </div>
+
+        <div class="pain-card">
+          <div class="pain-icon">⏱️</div>
+          <h3 class="pain-title">Customer Response Lag</h3>
+          <p class="pain-desc">Slow response times losing deals. Customers expect instant, but you're still doing manual.</p>
+        </div>
+
+        <div class="pain-card">
+          <div class="pain-icon">📊</div>
+          <h3 class="pain-title">Operational Blindness</h3>
+          <p class="pain-desc">No visibility into process metrics. You can't improve what you can't measure.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Capabilities -->
+  <section class="section capabilities">
+    <div class="container">
+      <div class="section-header">
+        <div class="section-label">Our Arsenal</div>
+        <h2 class="section-title">Capability Showcase</h2>
+        <p class="section-desc">The technology stack and expertise we bring to every project</p>
+      </div>
+
+      <div class="capability-grid">
+        <div class="capability-item">
+          <div class="capability-icon">🤖</div>
+          <div class="capability-content">
+            <h3>AI Integration</h3>
+            <p>GPT-4, Claude 3, Gemini orchestration. We connect the best AI models to your workflows for maximum intelligence.</p>
+          </div>
+        </div>
+
+        <div class="capability-item">
+          <div class="capability-icon">⚡</div>
+          <div class="capability-content">
+            <h3>Workflow Automation</h3>
+            <p>n8n, Zapier, Make.com expertise. Complex multi-step automations that run 24/7 without human intervention.</p>
+          </div>
+        </div>
+
+        <div class="capability-item">
+          <div class="capability-icon">💻</div>
+          <div class="capability-content">
+            <h3>Custom Development</h3>
+            <p>Python, Node.js, API integrations. When off-the-shelf doesn't cut it, we build custom solutions.</p>
+          </div>
+        </div>
+
+        <div class="capability-item">
+          <div class="capability-icon">🗄️</div>
+          <div class="capability-content">
+            <h3>Database Architecture</h3>
+            <p>PostgreSQL, Supabase, MongoDB. Structured data systems that scale with your growth.</p>
+          </div>
+        </div>
+
+        <div class="capability-item">
+          <div class="capability-icon">🔄</div>
+          <div class="capability-content">
+            <h3>Real-time Processing</h3>
+            <p>Webhooks, event-driven systems. Instant reactions to customer actions and system events.</p>
+          </div>
+        </div>
+
+        <div class="capability-item">
+          <div class="capability-icon">📈</div>
+          <div class="capability-content">
+            <h3>Analytics & Reporting</h3>
+            <p>Custom dashboards, KPI tracking. See exactly what's happening in your business, in real-time.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Case Studies -->
+  <section class="section">
+    <div class="container">
+      <div class="section-header">
+        <div class="section-label">Proven Results</div>
+        <h2 class="section-title">Case Studies</h2>
+        <p class="section-desc">Real transformations, real numbers, real impact</p>
+      </div>
+
+      <div class="case-studies">
+        <div class="case-card">
+          <div class="case-industry">Law Firm</div>
+          <div class="case-result">80%</div>
+          <p class="case-desc">Reduction in document processing time. What took 2 hours now takes 24 minutes. Paralegals focus on high-value work instead of paperwork.</p>
+        </div>
+
+        <div class="case-card">
+          <div class="case-industry">E-commerce</div>
+          <div class="case-result">$2.3M</div>
+          <p class="case-desc">Recovered from abandoned carts in 6 months. Automated follow-up sequences, personalized offers, perfect timing.</p>
+        </div>
+
+        <div class="case-card">
+          <div class="case-industry">Healthcare</div>
+          <div class="case-result">3 min</div>
+          <p class="case-desc">Patient intake reduced from 45 minutes. AI-powered forms, instant insurance verification, zero data entry errors.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Blog / Industry Insights -->
+  <section class="section">
+    <div class="container">
+      <div class="section-header">
+        <div class="section-label">Industry Intelligence</div>
+        <h2 class="section-title">Strategic Insights</h2>
+        <p class="section-desc">Deep dives into automation strategy and implementation</p>
+      </div>
+
+      <div class="blog-grid">
+        <div class="blog-card">
+          <div class="blog-date">March 2025</div>
+          <h3 class="blog-title">Why 90% of Automation Projects Fail (And How to Be the 10%)</h3>
+          <p class="blog-excerpt">Most automation projects fail not because of technology, but because of poor planning and unrealistic expectations. Here's how to avoid the common pitfalls.</p>
+          <a href="#" class="blog-link">Read More →</a>
+        </div>
+
+        <div class="blog-card">
+          <div class="blog-date">March 2025</div>
+          <h3 class="blog-title">The Hidden Cost of Manual Processes: A CFO's Wake-Up Call</h3>
+          <p class="blog-excerpt">When you factor in errors, delays, and opportunity costs, manual processes cost 10x more than you think. Here's the real math.</p>
+          <a href="#" class="blog-link">Read More →</a>
+        </div>
+
+        <div class="blog-card">
+          <div class="blog-date">February 2025</div>
+          <h3 class="blog-title">AI vs Human: When to Automate and When Not To</h3>
+          <p class="blog-excerpt">Not everything should be automated. Learn the decision framework for identifying high-ROI automation opportunities.</p>
+          <a href="#" class="blog-link">Read More →</a>
+        </div>
+
+        <div class="blog-card">
+          <div class="blog-date">February 2025</div>
+          <h3 class="blog-title">The 2025 Automation Landscape: What's Real vs Hype</h3>
+          <p class="blog-excerpt">Cutting through the noise - what automation technologies actually deliver ROI vs what's just marketing fluff.</p>
+          <a href="#" class="blog-link">Read More →</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Technology Stack -->
+  <section class="section tech-stack">
+    <div class="container">
+      <div class="section-header">
+        <div class="section-label">Technology</div>
+        <h2 class="section-title">Our Tech Ecosystem</h2>
+        <p class="section-desc">Enterprise-grade tools, startup agility</p>
+      </div>
+
+      <div class="tech-grid">
+        <div class="tech-item">
+          <div class="tech-name">GPT-4</div>
+          <div class="tech-category">AI Model</div>
+        </div>
+        <div class="tech-item">
+          <div class="tech-name">Claude 3</div>
+          <div class="tech-category">AI Model</div>
+        </div>
+        <div class="tech-item">
+          <div class="tech-name">n8n</div>
+          <div class="tech-category">Workflow</div>
+        </div>
+        <div class="tech-item">
+          <div class="tech-name">Supabase</div>
+          <div class="tech-category">Database</div>
+        </div>
+        <div class="tech-item">
+          <div class="tech-name">Python</div>
+          <div class="tech-category">Backend</div>
+        </div>
+        <div class="tech-item">
+          <div class="tech-name">Node.js</div>
+          <div class="tech-category">Backend</div>
+        </div>
+        <div class="tech-item">
+          <div class="tech-name">PostgreSQL</div>
+          <div class="tech-category">Database</div>
+        </div>
+        <div class="tech-item">
+          <div class="tech-name">Webhooks</div>
+          <div class="tech-category">Integration</div>
+        </div>
+        <div class="tech-item">
+          <div class="tech-name">Stripe</div>
+          <div class="tech-category">Payments</div>
+        </div>
+        <div class="tech-item">
+          <div class="tech-name">SendGrid</div>
+          <div class="tech-category">Email</div>
+        </div>
+        <div class="tech-item">
+          <div class="tech-name">Twilio</div>
+          <div class="tech-category">SMS</div>
+        </div>
+        <div class="tech-item">
+          <div class="tech-name">Vercel</div>
+          <div class="tech-category">Hosting</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ROI Calculator -->
+  <section class="section">
+    <div class="container">
+      <div class="roi-calculator">
+        <h2 class="roi-title">ROI Calculator</h2>
+        <p class="roi-desc">See your potential savings from automation</p>
+
+        <div class="roi-inputs">
+          <div class="roi-input-group">
+            <label class="roi-input-label">Hours Per Week on Manual Tasks</label>
+            <input type="number" class="roi-input" id="hours" value="20" min="1" max="168">
+          </div>
+          <div class="roi-input-group">
+            <label class="roi-input-label">Average Hourly Cost ($)</label>
+            <input type="number" class="roi-input" id="rate" value="50" min="10" max="500">
+          </div>
+          <div class="roi-input-group">
+            <label class="roi-input-label">Number of Employees</label>
+            <input type="number" class="roi-input" id="employees" value="5" min="1" max="100">
+          </div>
+        </div>
+
+        <div class="roi-result">
+          <div class="roi-result-label">Annual Savings Potential</div>
+          <div class="roi-result-value" id="savings">$260,000</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA Section -->
+  <section class="cta-section">
+    <div class="container">
+      <h2 class="cta-title">Ready to Transform?</h2>
+      <p class="cta-desc">Join the 10% of businesses that get automation right</p>
+      <div class="cta-buttons">
+        <a href="index.html#pricing" class="btn btn-primary">Start Your Journey →</a>
+        <a href="index.html#solutions" class="btn btn-secondary">Explore Solutions</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container">
+      <p>© 2025 ForgeVoice Studio. Building the future of business automation.</p>
+    </div>
+  </footer>
+
+  <script>
+    // ROI Calculator
+    function calculateROI() {
+      const hours = parseFloat(document.getElementById('hours').value) || 20;
+      const rate = parseFloat(document.getElementById('rate').value) || 50;
+      const employees = parseFloat(document.getElementById('employees').value) || 5;
+
+      const weeklyСost = hours * rate * employees;
+      const annualSavings = weeklyСost * 52;
+
+      document.getElementById('savings').textContent = '$' + annualSavings.toLocaleString();
+    }
+
+    // Add event listeners
+    document.getElementById('hours').addEventListener('input', calculateROI);
+    document.getElementById('rate').addEventListener('input', calculateROI);
+    document.getElementById('employees').addEventListener('input', calculateROI);
+
+    // Initial calculation
+    calculateROI();
+
+    // Smooth scroll for anchor links
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+      anchor.addEventListener('click', function (e) {
+        e.preventDefault();
+        const target = document.querySelector(this.getAttribute('href'));
+        if (target) {
+          target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        }
+      });
+    });
+  </script>
+</body>
+</html>
