@@ -3,10 +3,10 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>ForgeVoice Studio | AI Automation Agency — Build · Deploy · Transform</title>
-  <meta name="description" content="We build AI-powered automations, deploy revenue-generating systems, and transform how businesses operate. Custom-scoped projects. Limited to 3 per month.">
-  <meta property="og:title" content="ForgeVoice Studio | AI Automation Agency — Build · Deploy · Transform">
-  <meta property="og:description" content="From custom automations to AI-powered revenue systems. We build, deploy, and scale the infrastructure your business needs to grow.">
+  <title>ForgeVoice Studio | AI Agents That Discover, Build &amp; Grow Your Business</title>
+  <meta name="description" content="AI agents that scan the market 24/7, find businesses that need digital solutions, and build tailored systems in days. Landing pages, workflow automation, and full digital presence powered by ATLAS AI.">
+  <meta property="og:title" content="ForgeVoice Studio | AI Agents That Discover, Build &amp; Grow Your Business">
+  <meta property="og:description" content="AI agents scan the market 24/7, score opportunities on 10+ factors, and deploy landing pages, automations, and growth engines in days. Powered by ATLAS AI.">
   <meta property="og:type" content="website">
   <meta property="og:url" content="https://forgevoicestudio.com">
   <meta property="og:image" content="https://forgevoicestudio.com/og-image.png">
@@ -15,8 +15,8 @@
   <meta property="og:site_name" content="ForgeVoice Studio">
   <meta property="og:locale" content="en_AU">
   <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:title" content="ForgeVoice Studio | AI Automation Agency">
-  <meta name="twitter:description" content="From custom automations to AI-powered revenue systems. We build, deploy, and scale the infrastructure your business needs to grow.">
+  <meta name="twitter:title" content="ForgeVoice Studio | AI Agents That Discover, Build &amp; Grow Your Business">
+  <meta name="twitter:description" content="AI agents scan the market 24/7, score opportunities, and deploy landing pages and automations in days. Powered by ATLAS AI.">
   <meta name="twitter:image" content="https://forgevoicestudio.com/og-image.png">
   <meta name="theme-color" content="#000000">
   <meta name="author" content="ForgeVoice Studio">
@@ -1733,6 +1733,261 @@
     .text-center { text-align: center; }
     .mb-0 { margin-bottom: 0; }
 
+    /* ============ AI CAPABILITIES SECTION ============ */
+    .ai-capabilities-grid {
+      display: grid;
+      grid-template-columns: repeat(5, 1fr);
+      gap: 20px;
+      margin-top: 48px;
+    }
+    .ai-cap-card {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 32px 24px;
+      text-align: center;
+      transition: transform 0.4s var(--ease-out), border-color 0.4s, box-shadow 0.4s;
+      position: relative;
+      overflow: hidden;
+    }
+    .ai-cap-card::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      height: 2px;
+      background: linear-gradient(90deg, transparent, var(--accent-gold), transparent);
+      opacity: 0;
+      transition: opacity 0.3s;
+    }
+    .ai-cap-card:hover {
+      transform: translateY(-4px);
+      border-color: var(--accent-gold);
+      box-shadow: 0 16px 40px rgba(0,0,0,0.3);
+    }
+    .ai-cap-card:hover::before { opacity: 1; }
+    .ai-cap-icon {
+      width: 56px;
+      height: 56px;
+      border-radius: 14px;
+      background: var(--accent-gold-dim);
+      border: 1px solid rgba(200,168,78,0.15);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin: 0 auto 20px;
+      transition: transform 0.4s var(--ease-spring);
+    }
+    .ai-cap-card:hover .ai-cap-icon {
+      transform: scale(1.1) rotate(-5deg);
+    }
+    .ai-cap-icon svg {
+      width: 24px;
+      height: 24px;
+      stroke: var(--accent-gold);
+      fill: none;
+      stroke-width: 1.5;
+      stroke-linecap: round;
+      stroke-linejoin: round;
+    }
+    .ai-cap-card h3 {
+      font-size: 15px;
+      font-weight: 700;
+      color: var(--text-bright);
+      margin-bottom: 10px;
+      line-height: 1.3;
+    }
+    .ai-cap-card p {
+      font-size: 13px;
+      color: var(--text-muted);
+      line-height: 1.6;
+    }
+    @media (max-width: 1024px) {
+      .ai-capabilities-grid { grid-template-columns: repeat(3, 1fr); }
+    }
+    @media (max-width: 640px) {
+      .ai-capabilities-grid { grid-template-columns: 1fr; max-width: 400px; margin-left: auto; margin-right: auto; }
+    }
+
+    /* ============ CLIENT DASHBOARD TEASER ============ */
+    .dashboard-section {
+      background: var(--bg-elevated);
+    }
+    .dashboard-layout {
+      display: grid;
+      grid-template-columns: 1fr 1.2fr;
+      gap: 60px;
+      align-items: center;
+      margin-top: 48px;
+    }
+    .dashboard-features {
+      list-style: none;
+      padding: 0;
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+    }
+    .dashboard-feature {
+      display: flex;
+      align-items: flex-start;
+      gap: 16px;
+      padding: 20px;
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      transition: border-color 0.3s, transform 0.3s var(--ease-out);
+    }
+    .dashboard-feature:hover {
+      border-color: var(--accent-gold);
+      transform: translateX(4px);
+    }
+    .dashboard-feature-icon {
+      width: 40px;
+      height: 40px;
+      border-radius: 10px;
+      background: var(--accent-gold-dim);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+    }
+    .dashboard-feature-icon svg {
+      width: 20px;
+      height: 20px;
+      stroke: var(--accent-gold);
+      fill: none;
+      stroke-width: 1.5;
+      stroke-linecap: round;
+      stroke-linejoin: round;
+    }
+    .dashboard-feature h4 {
+      font-size: 15px;
+      font-weight: 600;
+      color: var(--text-bright);
+      margin-bottom: 4px;
+    }
+    .dashboard-feature p {
+      font-size: 13px;
+      color: var(--text-muted);
+      line-height: 1.5;
+    }
+    .dashboard-preview {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 24px;
+      position: relative;
+      overflow: hidden;
+    }
+    .dashboard-preview::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      height: 2px;
+      background: linear-gradient(90deg, var(--accent-gold), var(--accent-bright), var(--accent-gold));
+    }
+    .dashboard-header-mock {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding-bottom: 16px;
+      border-bottom: 1px solid var(--border);
+      margin-bottom: 20px;
+    }
+    .dashboard-header-mock h5 {
+      font-family: var(--font-mono);
+      font-size: 12px;
+      color: var(--accent-gold);
+      letter-spacing: 1px;
+      text-transform: uppercase;
+    }
+    .dashboard-status {
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      font-size: 11px;
+      color: #4ade80;
+      font-family: var(--font-mono);
+    }
+    .dashboard-status-dot {
+      width: 6px;
+      height: 6px;
+      border-radius: 50%;
+      background: #4ade80;
+      animation: pulse 2s ease-in-out infinite;
+    }
+    .dashboard-kpis {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 12px;
+      margin-bottom: 20px;
+    }
+    .dashboard-kpi {
+      background: var(--surface-2);
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      padding: 16px;
+    }
+    .dashboard-kpi-label {
+      font-family: var(--font-mono);
+      font-size: 10px;
+      color: var(--text-dim);
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      margin-bottom: 4px;
+    }
+    .dashboard-kpi-value {
+      font-family: var(--font-display);
+      font-size: 24px;
+      font-weight: 700;
+      color: var(--text-bright);
+    }
+    .dashboard-kpi-value.gold { color: var(--accent-gold); }
+    .dashboard-kpi-value.green { color: #4ade80; }
+    .dashboard-activity {
+      border-top: 1px solid var(--border);
+      padding-top: 16px;
+    }
+    .dashboard-activity-label {
+      font-family: var(--font-mono);
+      font-size: 10px;
+      color: var(--text-dim);
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      margin-bottom: 12px;
+    }
+    .dashboard-activity-item {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      padding: 8px 0;
+      font-size: 12px;
+      color: var(--text-muted);
+      border-bottom: 1px solid var(--border);
+    }
+    .dashboard-activity-item:last-child { border-bottom: none; }
+    .activity-dot {
+      width: 4px;
+      height: 4px;
+      border-radius: 50%;
+      flex-shrink: 0;
+    }
+    .activity-dot.gold { background: var(--accent-gold); }
+    .activity-dot.green { background: #4ade80; }
+    .activity-dot.blue { background: #60a5fa; }
+    .activity-time {
+      margin-left: auto;
+      font-family: var(--font-mono);
+      font-size: 10px;
+      color: var(--text-dim);
+    }
+    @media (max-width: 900px) {
+      .dashboard-layout { grid-template-columns: 1fr; gap: 40px; }
+    }
+
     /* ============ RESPONSIVE ============ */
     @media (max-width: 768px) {
       .hero { min-height: auto; padding: 140px 0 80px; }
@@ -1755,7 +2010,7 @@
   <!-- Loader — Orchestrated -->
   <div class="loader" id="loader">
     <div class="loader-logo">ForgeVoice</div>
-    <div class="loader-tagline">AI Automation Studio</div>
+    <div class="loader-tagline">Powered by ATLAS AI</div>
     <div class="loader-bar"></div>
   </div>
 
@@ -1774,12 +2029,12 @@
         </div>
       </a>
       <ul class="nav-links">
+        <li><a href="#ai-capabilities">AI Agents</a></li>
         <li><a href="#services">Services</a></li>
-        <li><a href="insights.html">Insights</a></li>
         <li><a href="#solutions">Solutions</a></li>
         <li><a href="#process">Process</a></li>
         <li><a href="#pricing">Apply</a></li>
-        <li><a href="https://calendly.com/ashish-forgevoice/new-meeting" target="_blank" class="nav-cta">Book Free Audit</a></li>
+        <li><a href="https://calendly.com/ashish-forgevoice/new-meeting" target="_blank" class="nav-cta">Free Assessment</a></li>
       </ul>
       <button class="menu-toggle" id="menuToggle" aria-label="Menu">
         <span></span><span></span><span></span>
@@ -1789,12 +2044,12 @@
 
   <!-- Mobile menu -->
   <div class="mobile-menu" id="mobileMenu">
+    <a href="#ai-capabilities" onclick="closeMobileMenu()">AI Agents</a>
     <a href="#services" onclick="closeMobileMenu()">Services</a>
-    <a href="insights.html">Insights</a>
     <a href="#solutions" onclick="closeMobileMenu()">Solutions</a>
     <a href="#process" onclick="closeMobileMenu()">Process</a>
     <a href="#pricing" onclick="closeMobileMenu()">Apply</a>
-    <a href="https://calendly.com/ashish-forgevoice/new-meeting" target="_blank" onclick="closeMobileMenu()">Book Audit</a>
+    <a href="https://calendly.com/ashish-forgevoice/new-meeting" target="_blank" onclick="closeMobileMenu()">Free Assessment</a>
   </div>
 
   <!-- Hero -->
@@ -1809,27 +2064,27 @@
     <div class="hero-content">
       <div class="hero-badge" id="heroBadge">
         <span class="hero-badge-dot"></span>
-        AI Automation Agency
+        Powered by ATLAS AI
       </div>
       <h1 id="heroTitle">
-        <span class="word" data-delay="0">We</span>
-        <span class="word" data-delay="60">build</span>
-        <span class="word word-em" data-delay="120">AI-powered</span>
-        <span class="word word-em" data-delay="180">systems</span>
-        <span class="word" data-delay="240">that</span>
-        <span class="word" data-delay="300">run</span>
-        <span class="word" data-delay="360">your</span>
-        <span class="word" data-delay="420">business</span>
-        <span class="word" data-delay="480">on</span>
-        <span class="word word-em" data-delay="540">autopilot</span>
+        <span class="word" data-delay="0">AI</span>
+        <span class="word" data-delay="60">agents</span>
+        <span class="word" data-delay="120">that</span>
+        <span class="word word-em" data-delay="180">discover,</span>
+        <span class="word word-em" data-delay="240">build,</span>
+        <span class="word" data-delay="300">and</span>
+        <span class="word word-em" data-delay="360">grow</span>
+        <span class="word" data-delay="420">your</span>
+        <span class="word" data-delay="480">digital</span>
+        <span class="word word-em" data-delay="540">business</span>
       </h1>
-      <p class="hero-desc" id="heroDesc">From custom automations to revenue-generating AI systems. We build, deploy, and scale the infrastructure your business needs to grow.</p>
+      <p class="hero-desc" id="heroDesc">Our AI agents scan the market 24/7, find businesses that need digital solutions, and build tailored systems that drive revenue. From opportunity to deployment in days, not months.</p>
       <div class="hero-actions" id="heroActions">
         <a href="https://calendly.com/ashish-forgevoice/new-meeting" target="_blank" class="btn-primary btn-magnetic">
-          Book Free Strategy Call
+          Get Your Free AI-Powered Business Assessment
           <span class="arrow">&rarr;</span>
         </a>
-        <span class="hero-sub">3 projects/month. Custom-scoped. Results in 1-2 weeks.</span>
+        <span class="hero-sub">125+ opportunities analyzed. Pages deployed in hours. 24/7 market scanning.</span>
       </div>
     </div>
     <div class="scroll-indicator" id="scrollIndicator">
@@ -1843,21 +2098,21 @@
     <div class="container">
       <div class="stats-grid reveal" id="statsGrid">
         <div class="stat-item">
-          <div class="stat-number" data-target="200" data-suffix="+">0</div>
-          <div class="stat-label">Workflows audited</div>
+          <div class="stat-number" data-target="125" data-suffix="+">0</div>
+          <div class="stat-label">Opportunities analyzed</div>
         </div>
         <div class="stat-item">
-          <div class="stat-number" data-target="10" data-suffix="x" data-prefix="">0</div>
-          <div class="stat-label">Average ROI delivered</div>
+          <div class="stat-number" data-target="24" data-suffix="/7" data-prefix="">0</div>
+          <div class="stat-label">AI-powered market scanning</div>
         </div>
         <div class="stat-item">
-          <div class="stat-number" data-target="48" data-suffix="hr" data-prefix="<">0</div>
-          <div class="stat-label">First deliverable</div>
+          <div class="stat-number" data-target="4" data-suffix="hrs" data-prefix="<">0</div>
+          <div class="stat-label">Pages deployed</div>
         </div>
       </div>
       <!-- Trust Bar -->
       <div class="trust-bar reveal stagger-2">
-        <p class="trust-text">Trusted by teams across Australia &amp; beyond</p>
+        <p class="trust-text">AI-powered scoring system &middot; Trusted by businesses across Australia &amp; beyond</p>
       </div>
     </div>
   </section>
@@ -1868,29 +2123,29 @@
   <section class="section">
     <div class="container">
       <div class="section-label reveal">The Problem</div>
-      <h2 class="section-title reveal stagger-1">Your team is drowning<br>in manual work</h2>
-      <p class="section-desc reveal stagger-2">Every hour spent on repetitive tasks is an hour not spent on strategy, sales, or serving your customers.</p>
+      <h2 class="section-title reveal stagger-1">Finding clients is slow.<br>Building solutions is slower.</h2>
+      <p class="section-desc reveal stagger-2">Traditional agencies spend weeks prospecting, days quoting, and months delivering. Your business can't wait that long.</p>
       <div class="problems-grid">
         <div class="problem-card reveal stagger-3" data-tilt>
           <div class="problem-icon">
-            <svg viewBox="0 0 24 24"><rect x="3" y="3" width="7" height="7" rx="1"/><rect x="14" y="3" width="7" height="7" rx="1"/><rect x="3" y="14" width="7" height="7" rx="1"/><rect x="14" y="14" width="7" height="7" rx="1"/></svg>
+            <svg viewBox="0 0 24 24"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
           </div>
-          <h3>Copy-paste data between tools</h3>
-          <p>Moving data from CRM to spreadsheets to invoicing. Every day. By hand. One mistake can cost thousands.</p>
+          <h3>Missed opportunities everywhere</h3>
+          <p>Businesses are begging for automation help on Reddit, forums, and social media right now. But nobody is listening at scale.</p>
         </div>
         <div class="problem-card reveal stagger-4" data-tilt>
           <div class="problem-icon">
             <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
           </div>
-          <h3>Manual follow-ups that slip</h3>
-          <p>Leads go cold. Invoices go unpaid. Reminders never sent. Revenue leaks everywhere because humans forget.</p>
+          <h3>Proposals take days, not minutes</h3>
+          <p>By the time you research, scope, and write a proposal manually, the prospect has already moved on to someone faster.</p>
         </div>
         <div class="problem-card reveal stagger-5" data-tilt>
           <div class="problem-icon">
             <svg viewBox="0 0 24 24"><path d="M4 14a1 1 0 0 1-.78-1.63l9.9-10.2a.5.5 0 0 1 .86.46l-1.92 6.02A1 1 0 0 0 13 10h7a1 1 0 0 1 .78 1.63l-9.9 10.2a.5.5 0 0 1-.86-.46l1.92-6.02A1 1 0 0 0 11 14z"/></svg>
           </div>
-          <h3>Tools that don't talk</h3>
-          <p>Slack, Sheets, HubSpot, Xero, Gmail &mdash; 10+ tools, zero connections. Your team IS the integration layer.</p>
+          <h3>Delivery takes weeks or months</h3>
+          <p>Landing pages, workflows, integrations &mdash; traditional agencies quote 4-8 weeks. AI builds and deploys in hours.</p>
         </div>
       </div>
     </div>
@@ -1898,91 +2153,231 @@
 
   <div class="section-divider"></div>
 
-  <!-- Services — The 3 Plays -->
+  <!-- AI-Powered Capabilities -->
+  <section class="section" id="ai-capabilities">
+    <div class="container">
+      <div class="text-center">
+        <div class="section-label reveal">Powered by ATLAS</div>
+        <h2 class="section-title reveal stagger-1">Five AI agents working<br>for your business 24/7</h2>
+        <p class="section-desc reveal stagger-2" style="margin-left:auto;margin-right:auto;">Our ATLAS platform runs autonomous AI agents that discover, analyze, build, distribute, and optimize &mdash; so you don't have to.</p>
+      </div>
+      <div class="ai-capabilities-grid">
+        <div class="ai-cap-card reveal stagger-3" data-tilt>
+          <div class="ai-cap-icon">
+            <svg viewBox="0 0 24 24"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
+          </div>
+          <h3>AI Opportunity Discovery</h3>
+          <p>Our AI scouts the market 24/7 to find businesses that need digital solutions</p>
+        </div>
+        <div class="ai-cap-card reveal stagger-4" data-tilt>
+          <div class="ai-cap-icon">
+            <svg viewBox="0 0 24 24"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/></svg>
+          </div>
+          <h3>Smart Proposal Generation</h3>
+          <p>Personalized proposals generated in minutes, not days &mdash; tailored to each prospect</p>
+        </div>
+        <div class="ai-cap-card reveal stagger-5" data-tilt>
+          <div class="ai-cap-icon">
+            <svg viewBox="0 0 24 24"><rect x="2" y="3" width="20" height="14" rx="2" ry="2"/><line x1="8" y1="21" x2="16" y2="21"/><line x1="12" y1="17" x2="12" y2="21"/></svg>
+          </div>
+          <h3>Automated Landing Pages</h3>
+          <p>High-converting pages built and deployed by AI in hours, not weeks</p>
+        </div>
+        <div class="ai-cap-card reveal stagger-6" data-tilt>
+          <div class="ai-cap-icon">
+            <svg viewBox="0 0 24 24"><path d="M22 2L11 13"/><polygon points="22 2 15 22 11 13 2 9 22 2"/></svg>
+          </div>
+          <h3>Multi-Channel Distribution</h3>
+          <p>Your solution promoted across Reddit, email, social media simultaneously</p>
+        </div>
+        <div class="ai-cap-card reveal stagger-6" data-tilt>
+          <div class="ai-cap-icon">
+            <svg viewBox="0 0 24 24"><line x1="12" y1="1" x2="12" y2="23"/><path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg>
+          </div>
+          <h3>Budget Intelligence</h3>
+          <p>AI-managed budgets that maximize ROI on every dollar spent</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <div class="section-divider"></div>
+
+  <!-- Client Dashboard Teaser -->
+  <section class="section dashboard-section" id="dashboard">
+    <div class="container">
+      <div class="section-label reveal">Client Portal</div>
+      <h2 class="section-title reveal stagger-1">Your project. Full visibility.<br>Real-time dashboard.</h2>
+      <p class="section-desc reveal stagger-2">Every client gets access to a live dashboard showing exactly what our AI agents are doing for your business.</p>
+      <div class="dashboard-layout">
+        <ul class="dashboard-features">
+          <li class="dashboard-feature reveal stagger-3">
+            <div class="dashboard-feature-icon">
+              <svg viewBox="0 0 24 24"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/></svg>
+            </div>
+            <div>
+              <h4>Project Progress</h4>
+              <p>Track every milestone, deliverable, and task in real time as our AI builds your solution.</p>
+            </div>
+          </li>
+          <li class="dashboard-feature reveal stagger-4">
+            <div class="dashboard-feature-icon">
+              <svg viewBox="0 0 24 24"><path d="M21.21 15.89A10 10 0 1 1 8 2.83"/><path d="M22 12A10 10 0 0 0 12 2v10z"/></svg>
+            </div>
+            <div>
+              <h4>Performance Metrics</h4>
+              <p>Conversion rates, visitor analytics, lead quality scores &mdash; all the numbers that matter.</p>
+            </div>
+          </li>
+          <li class="dashboard-feature reveal stagger-5">
+            <div class="dashboard-feature-icon">
+              <svg viewBox="0 0 24 24"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>
+            </div>
+            <div>
+              <h4>Communication History</h4>
+              <p>Every message, update, and decision logged and searchable. No more email chains.</p>
+            </div>
+          </li>
+          <li class="dashboard-feature reveal stagger-6">
+            <div class="dashboard-feature-icon">
+              <svg viewBox="0 0 24 24"><path d="M13 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V9z"/><polyline points="13 2 13 9 20 9"/></svg>
+            </div>
+            <div>
+              <h4>Deliverables</h4>
+              <p>Download landing pages, reports, proposals, and assets directly from your portal.</p>
+            </div>
+          </li>
+        </ul>
+        <div class="dashboard-preview reveal-scale stagger-4">
+          <div class="dashboard-header-mock">
+            <h5>ForgeVoice Dashboard</h5>
+            <span class="dashboard-status"><span class="dashboard-status-dot"></span> Live</span>
+          </div>
+          <div class="dashboard-kpis">
+            <div class="dashboard-kpi">
+              <div class="dashboard-kpi-label">Opportunities Found</div>
+              <div class="dashboard-kpi-value gold">127</div>
+            </div>
+            <div class="dashboard-kpi">
+              <div class="dashboard-kpi-label">Proposals Sent</div>
+              <div class="dashboard-kpi-value">34</div>
+            </div>
+            <div class="dashboard-kpi">
+              <div class="dashboard-kpi-label">Pages Deployed</div>
+              <div class="dashboard-kpi-value green">12</div>
+            </div>
+            <div class="dashboard-kpi">
+              <div class="dashboard-kpi-label">Conversion Rate</div>
+              <div class="dashboard-kpi-value gold">8.4%</div>
+            </div>
+          </div>
+          <div class="dashboard-activity">
+            <div class="dashboard-activity-label">Recent Activity</div>
+            <div class="dashboard-activity-item">
+              <span class="activity-dot green"></span>
+              Landing page deployed for HVAC client
+              <span class="activity-time">2h ago</span>
+            </div>
+            <div class="dashboard-activity-item">
+              <span class="activity-dot gold"></span>
+              New opportunity scored: Plumbing automation (87/100)
+              <span class="activity-time">4h ago</span>
+            </div>
+            <div class="dashboard-activity-item">
+              <span class="activity-dot blue"></span>
+              Proposal sent to Real Estate agency
+              <span class="activity-time">6h ago</span>
+            </div>
+            <div class="dashboard-activity-item">
+              <span class="activity-dot green"></span>
+              Reddit distribution: 3 channels reached
+              <span class="activity-time">8h ago</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <div class="section-divider"></div>
+
+  <!-- Services -->
   <section class="section services-section" id="services">
     <div class="container">
       <div class="text-center">
-        <div class="section-label reveal">What We Do</div>
-        <h2 class="section-title reveal stagger-1">Three ways we<br>grow your business</h2>
-        <p class="section-desc reveal stagger-2" style="margin-left:auto;margin-right:auto;">Whether you need a single automation or a full revenue engine, we have the right engagement model for you.</p>
+        <div class="section-label reveal">What We Build</div>
+        <h2 class="section-title reveal stagger-1">Digital solutions priced<br>for real businesses</h2>
+        <p class="section-desc reveal stagger-2" style="margin-left:auto;margin-right:auto;">From a high-converting landing page to a complete digital presence with AI-powered lead generation. Pick the tier that fits.</p>
       </div>
       <div class="services-grid">
-        <!-- Play 1: Build -->
+        <!-- Tier 1: Landing Page -->
         <div class="service-card reveal stagger-3" data-tilt>
-          <div class="service-tier">Play 1</div>
-          <h3 class="service-name">Build</h3>
-          <p class="service-tagline">AI-Powered Automation Projects</p>
-          <p class="service-desc">We design and build custom automations that eliminate repetitive work, connect your tools, and save your team 10+ hours every week.</p>
+          <div class="service-tier">Tier 1</div>
+          <h3 class="service-name">Landing Page</h3>
+          <p class="service-tagline">Design &amp; Development</p>
+          <p class="service-desc">A high-converting, mobile-responsive landing page designed by AI and refined by humans. Built in hours, not weeks.</p>
           <ul class="service-list">
-            <li>Custom workflow automation</li>
-            <li>Tool integrations (CRM, email, invoicing)</li>
+            <li>Custom design matching your brand</li>
+            <li>Mobile-responsive &amp; fast-loading</li>
+            <li>SEO-optimized content</li>
+            <li>Contact form &amp; lead capture</li>
+            <li>Analytics &amp; conversion tracking</li>
+          </ul>
+          <div class="service-price">
+            <span class="price-amount">$997 &ndash; $4,997</span>
+            <span class="price-unit">AUD &middot; One-time</span>
+          </div>
+          <p class="service-delivery">Delivered in 48-72 hours. Unlimited revisions.</p>
+          <a href="https://calendly.com/ashish-forgevoice/new-meeting" target="_blank" class="btn-primary service-cta btn-magnetic">
+            Get Started
+            <span class="arrow">&rarr;</span>
+          </a>
+        </div>
+
+        <!-- Tier 2: Workflow Automation -->
+        <div class="service-card service-card-featured reveal stagger-4" data-tilt>
+          <div class="service-tier">Tier 2</div>
+          <h3 class="service-name">Workflow Automation</h3>
+          <p class="service-tagline">AI-Powered Systems</p>
+          <p class="service-desc">Custom automation workflows that connect your tools, eliminate manual work, and save your team 10+ hours every week. Built with AI, maintained for you.</p>
+          <ul class="service-list">
+            <li>Custom workflow design &amp; build</li>
+            <li>CRM, email &amp; invoicing integrations</li>
             <li>AI-powered data processing</li>
             <li>Error handling &amp; monitoring</li>
             <li>Full documentation &amp; training</li>
           </ul>
           <div class="service-price">
-            <span class="price-amount">Custom</span>
-            <span class="price-unit">Scoped to your workflow</span>
+            <span class="price-amount">$1,497 &ndash; $6,997</span>
+            <span class="price-unit">AUD &middot; One-time + optional retainer</span>
           </div>
-          <p class="service-delivery">Delivered in 1-2 weeks. Fixed-price once scoped.</p>
+          <p class="service-delivery">Delivered in 1-2 weeks. Fixed-price guarantee.</p>
           <a href="https://calendly.com/ashish-forgevoice/new-meeting" target="_blank" class="btn-primary service-cta btn-magnetic">
             Book Strategy Call
             <span class="arrow">&rarr;</span>
           </a>
         </div>
 
-        <!-- Play 2: Deploy -->
-        <div class="service-card service-card-featured reveal stagger-4" data-tilt>
-          <div class="service-tier">Play 2</div>
-          <h3 class="service-name">Deploy</h3>
-          <p class="service-tagline">Revenue-Generating Systems</p>
-          <p class="service-desc">We build systems that directly generate revenue for your business &mdash; lead gen engines, sales automation, AI-powered client acquisition. You keep 75%.</p>
+        <!-- Tier 3: Full Digital Presence -->
+        <div class="service-card reveal stagger-5" data-tilt>
+          <div class="service-tier">Tier 3</div>
+          <h3 class="service-name">Full Digital Presence</h3>
+          <p class="service-tagline">Complete Growth Engine</p>
+          <p class="service-desc">Landing page + workflow automation + AI-powered lead generation + multi-channel content distribution. The complete package to dominate your market.</p>
           <ul class="service-list">
-            <li>Lead generation engines</li>
-            <li>Sales pipeline automation</li>
-            <li>AI-powered outreach systems</li>
-            <li>Content distribution infrastructure</li>
-            <li>CRM &amp; analytics dashboards</li>
+            <li>Everything in Tier 1 &amp; 2</li>
+            <li>AI-powered lead generation</li>
+            <li>Content distribution &amp; marketing</li>
+            <li>Real-time analytics dashboard</li>
+            <li>Ongoing optimization &amp; support</li>
           </ul>
           <div class="service-price">
-            <span class="price-amount">Revenue Share</span>
-            <span class="price-unit">You keep 75% of revenue generated</span>
+            <span class="price-amount">$2,997 &ndash; $9,997</span>
+            <span class="price-unit">AUD &middot; Setup + monthly retainer</span>
           </div>
-          <p class="service-delivery">We build it. We maintain it. You profit.</p>
+          <p class="service-delivery">Full deployment in 2-3 weeks. Continuous growth.</p>
           <a href="https://calendly.com/ashish-forgevoice/new-meeting" target="_blank" class="btn-primary service-cta btn-magnetic">
             Book Strategy Call
-            <span class="arrow">&rarr;</span>
-          </a>
-        </div>
-
-        <!-- Play 3: Platform -->
-        <div class="service-card service-card-coming reveal stagger-5" data-tilt>
-          <div class="service-tier">Play 3</div>
-          <span class="service-beta-badge">
-            <span class="hero-badge-dot" style="width:5px;height:5px;"></span>
-            Private Beta
-          </span>
-          <h3 class="service-name">Platform</h3>
-          <p class="service-tagline">AI Operating System</p>
-          <p class="service-desc">The full AI operating system for your business &mdash; agents, automation library, demand intelligence, and autonomous workflows. All in one platform.</p>
-          <ul class="service-list">
-            <li>AI agent framework</li>
-            <li>Demand intelligence engine</li>
-            <li>Pre-built automation templates</li>
-            <li>Autonomous business workflows</li>
-            <li>Real-time market signals</li>
-          </ul>
-          <div class="service-price">
-            <span class="price-amount">Founding Members</span>
-            <span class="price-unit">Apply for early access</span>
-          </div>
-          <p class="service-delivery">Currently accepting founding members.</p>
-          <a href="/demo" class="btn-secondary service-cta btn-magnetic" style="margin-bottom:8px;">
-            See Live Demo
-            <span class="arrow">&rarr;</span>
-          </a>
-          <a href="https://calendly.com/ashish-forgevoice/new-meeting" target="_blank" class="btn-secondary service-cta btn-magnetic" style="opacity:0.7; font-size:12px;">
-            Request Access
             <span class="arrow">&rarr;</span>
           </a>
         </div>
@@ -1996,9 +2391,9 @@
   <section class="section solutions-section" id="solutions">
     <div class="container">
       <div class="text-center">
-        <div class="section-label reveal">Industry Solutions</div>
-        <h2 class="section-title reveal stagger-1">12 ATLAS automation<br>verticals ready to deploy</h2>
-        <p class="section-desc reveal stagger-2">Pre-built, industry-specific automation solutions. Pick your vertical, we handle the rest.</p>
+        <div class="section-label reveal">ATLAS Industry Verticals</div>
+        <h2 class="section-title reveal stagger-1">12 ready-to-deploy<br>automation solutions</h2>
+        <p class="section-desc reveal stagger-2">AI-scored, industry-specific automation packages. Our agents have analyzed 125+ opportunities across these verticals.</p>
       </div>
 
       <!-- Filter Buttons -->
@@ -2194,9 +2589,9 @@
 
       <!-- CTA -->
       <div class="text-center" style="margin-top: 60px;">
-        <a href="insights.html" class="btn-primary reveal">
-          Explore Our Capabilities
-          <span class="arrow">→</span>
+        <a href="https://calendly.com/ashish-forgevoice/new-meeting" target="_blank" class="btn-primary reveal btn-magnetic">
+          Get Your Free AI Assessment
+          <span class="arrow">&rarr;</span>
         </a>
       </div>
     </div>
@@ -2209,29 +2604,29 @@
     <div class="container">
       <div class="text-center">
         <div class="section-label reveal">How It Works</div>
-        <h2 class="section-title reveal stagger-1">From chaos to autopilot<br>in 4 steps</h2>
+        <h2 class="section-title reveal stagger-1">From market signal<br>to deployed solution</h2>
       </div>
       <div class="process-grid reveal stagger-2" id="processGrid">
         <div class="process-line-fill"></div>
         <div class="process-step">
           <div class="step-num">1</div>
-          <h3>Free Audit</h3>
-          <p>We map your workflows and find the biggest time-wasters. Takes 30 minutes.</p>
+          <h3>Discover</h3>
+          <p>Our AI agents scan the market 24/7 for businesses with automation needs &mdash; Reddit, forums, social media, and industry channels.</p>
         </div>
         <div class="process-step">
           <div class="step-num">2</div>
-          <h3>Custom Scope</h3>
-          <p>We design a tailored automation plan with clear deliverables and a fixed quote.</p>
+          <h3>Analyze</h3>
+          <p>Each opportunity is scored on 10+ factors including market size, pain level, automation potential, and willingness to pay.</p>
         </div>
         <div class="process-step">
           <div class="step-num">3</div>
-          <h3>We Build & Test</h3>
-          <p>We design, build, and test your automations. You approve before anything goes live.</p>
+          <h3>Build</h3>
+          <p>We create tailored digital solutions &mdash; landing pages, workflows, integrations &mdash; in days, not weeks. AI-assisted, human-refined.</p>
         </div>
         <div class="process-step">
           <div class="step-num">4</div>
-          <h3>Launch & Support</h3>
-          <p>Go live with included support. Optional ongoing retainer available.</p>
+          <h3>Grow</h3>
+          <p>Continuous optimization and multi-channel distribution across email, social, and content to drive results and scale revenue.</p>
         </div>
       </div>
     </div>
@@ -2243,8 +2638,8 @@
   <section class="pricing-section" id="pricing">
     <div class="container">
       <div class="pricing-header">
-        <div class="section-label reveal">Limited Availability</div>
-        <h2 class="section-title reveal stagger-1">Every engagement is scoped,<br>quoted, and built bespoke.</h2>
+        <div class="section-label reveal">Get Started</div>
+        <h2 class="section-title reveal stagger-1">AI-powered assessment.<br>Custom-built solutions.</h2>
       </div>
 
       <div class="apply-card reveal-scale stagger-2">
@@ -2252,36 +2647,36 @@
           <div class="apply-left">
             <p class="apply-scarcity">
               <span class="scarcity-dot"></span>
-              We take on <strong>3 projects per month</strong>
+              AI-powered &mdash; <strong>results in days, not months</strong>
             </p>
-            <h3 class="apply-headline">No cookie-cutter packages.<br>Just what your business actually needs.</h3>
-            <p class="apply-desc">Every engagement starts with a free 30-minute strategy call. We identify your highest-ROI opportunities, design a tailored scope, and give you a clear proposal before any work begins.</p>
+            <h3 class="apply-headline">Get an AI-powered assessment<br>of your business opportunity.</h3>
+            <p class="apply-desc">Our ATLAS system analyzes your market, scores opportunities on 10+ factors, and identifies exactly where automation can generate the highest ROI for your business.</p>
             <div class="apply-includes">
-              <p class="apply-includes-label">Every project includes:</p>
+              <p class="apply-includes-label">Every engagement includes:</p>
               <div class="apply-includes-grid">
                 <div class="apply-include-item">
                   <span class="apply-icon">&#9670;</span>
-                  <span>Custom-built workflows</span>
+                  <span>AI opportunity scoring</span>
                 </div>
                 <div class="apply-include-item">
                   <span class="apply-icon">&#9670;</span>
-                  <span>Error handling &amp; monitoring</span>
+                  <span>Custom-built solutions</span>
                 </div>
                 <div class="apply-include-item">
                   <span class="apply-icon">&#9670;</span>
-                  <span>Full documentation</span>
+                  <span>Real-time client dashboard</span>
                 </div>
                 <div class="apply-include-item">
                   <span class="apply-icon">&#9670;</span>
-                  <span>Team training session</span>
+                  <span>Multi-channel distribution</span>
                 </div>
                 <div class="apply-include-item">
                   <span class="apply-icon">&#9670;</span>
-                  <span>Fixed-price guarantee</span>
+                  <span>Performance analytics</span>
                 </div>
                 <div class="apply-include-item">
                   <span class="apply-icon">&#9670;</span>
-                  <span>30-day post-launch support</span>
+                  <span>Ongoing optimization</span>
                 </div>
               </div>
             </div>
@@ -2289,13 +2684,13 @@
           <div class="apply-right">
             <div class="apply-cta-box">
               <p class="apply-cta-label">Start here</p>
-              <h4>Book your free<br>automation audit</h4>
-              <p class="apply-cta-desc">30 minutes. No obligation.<br>We map your workflows and show you exactly where to automate first.</p>
+              <h4>Get your free AI-powered<br>business assessment</h4>
+              <p class="apply-cta-desc">30 minutes. No obligation.<br>We analyze your market and show you the highest-ROI automation opportunities.</p>
               <a href="https://calendly.com/ashish-forgevoice/new-meeting" target="_blank" class="btn-primary apply-btn btn-magnetic">
-                Book Strategy Call
+                Get Free Assessment
                 <span class="arrow">&rarr;</span>
               </a>
-              <p class="apply-footnote">Custom-scoped projects &middot; Revenue-share available</p>
+              <p class="apply-footnote">AI-scored opportunities &middot; Results in days</p>
             </div>
           </div>
         </div>
@@ -2390,7 +2785,7 @@
   <!-- Tagline -->
   <section class="tagline-section">
     <div class="container">
-      <p class="tagline reveal">Built for Leverage.</p>
+      <p class="tagline reveal">AI discovers. AI builds. You grow.</p>
     </div>
   </section>
 
@@ -2398,15 +2793,19 @@
   <section class="final-cta" id="contact">
     <div class="container">
       <div class="final-cta-content">
-        <h2 class="reveal">Ready to build your<br>unfair advantage?</h2>
-        <p class="reveal stagger-1">Book a free 30-minute strategy call. We'll identify your highest-ROI opportunities and show you exactly how AI automation can transform your business.</p>
-        <div class="reveal stagger-2">
+        <h2 class="reveal">Ready for AI to find<br>your next opportunity?</h2>
+        <p class="reveal stagger-1">Get a free AI-powered business assessment. Our ATLAS system will analyze your market, score your opportunities, and show you exactly where automation drives the highest ROI.</p>
+        <div class="reveal stagger-2" style="display:flex;flex-direction:column;align-items:center;gap:16px;">
           <a href="https://calendly.com/ashish-forgevoice/new-meeting" target="_blank" class="btn-primary btn-magnetic">
-            Book Free Strategy Call
+            Get Your Free AI-Powered Business Assessment
+            <span class="arrow">&rarr;</span>
+          </a>
+          <a href="https://calendly.com/ashish-forgevoice/new-meeting" target="_blank" class="btn-secondary btn-magnetic">
+            Book a Strategy Call
             <span class="arrow">&rarr;</span>
           </a>
         </div>
-        <p class="hero-sub reveal stagger-3" style="margin-top:20px;">No obligation. No sales pitch. Just a clear roadmap.</p>
+        <p class="hero-sub reveal stagger-3" style="margin-top:20px;">No obligation. AI-powered insights. Results in days, not months.</p>
       </div>
     </div>
   </section>
