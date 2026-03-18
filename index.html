@@ -1589,6 +1589,160 @@
       .apply-includes-grid { grid-template-columns: 1fr; }
     }
 
+    /* ============ PORTFOLIO SHOWCASE ============ */
+    .portfolio-section {
+      padding: clamp(80px, 10vw, 120px) 0;
+      position: relative;
+      overflow: hidden;
+    }
+    .portfolio-section::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: radial-gradient(ellipse 60% 40% at 50% 20%, rgba(200,168,78,0.04), transparent);
+      pointer-events: none;
+    }
+    .portfolio-header {
+      text-align: center;
+      margin-bottom: 56px;
+      position: relative;
+      z-index: 1;
+    }
+    .portfolio-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 24px;
+      position: relative;
+      z-index: 1;
+    }
+    .portfolio-card {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      overflow: hidden;
+      transition: transform 0.4s var(--ease-out), box-shadow 0.4s var(--ease-out), border-color 0.4s ease;
+      position: relative;
+    }
+    .portfolio-card:hover {
+      transform: translateY(-6px) scale(1.02);
+      border-color: var(--border-hover);
+    }
+    .portfolio-card-bar {
+      height: 4px;
+      width: 100%;
+    }
+    .portfolio-card-bar.bar-blue { background: linear-gradient(90deg, #3B82F6, #60A5FA); }
+    .portfolio-card-bar.bar-green { background: linear-gradient(90deg, #10B981, #34D399); }
+    .portfolio-card-bar.bar-amber { background: linear-gradient(90deg, #D97706, #F59E0B); }
+    .portfolio-card-bar.bar-purple { background: linear-gradient(90deg, #8B5CF6, #A78BFA); }
+    .portfolio-card-bar.bar-gold { background: linear-gradient(90deg, #C8A84E, #DAC06A); }
+    .portfolio-card:hover.portfolio-card-blue { box-shadow: 0 8px 40px rgba(59,130,246,0.12); }
+    .portfolio-card:hover.portfolio-card-green { box-shadow: 0 8px 40px rgba(16,185,129,0.12); }
+    .portfolio-card:hover.portfolio-card-amber { box-shadow: 0 8px 40px rgba(217,119,6,0.12); }
+    .portfolio-card:hover.portfolio-card-purple { box-shadow: 0 8px 40px rgba(139,92,246,0.12); }
+    .portfolio-card:hover.portfolio-card-gold { box-shadow: 0 8px 40px rgba(200,168,78,0.12); }
+    .portfolio-card-body {
+      padding: 28px 24px;
+    }
+    .portfolio-card-label {
+      font-family: var(--font-mono);
+      font-size: 10px;
+      letter-spacing: 2.5px;
+      text-transform: uppercase;
+      margin-bottom: 12px;
+    }
+    .portfolio-card-label.label-blue { color: #60A5FA; }
+    .portfolio-card-label.label-green { color: #34D399; }
+    .portfolio-card-label.label-amber { color: #F59E0B; }
+    .portfolio-card-label.label-purple { color: #A78BFA; }
+    .portfolio-card-label.label-gold { color: #DAC06A; }
+    .portfolio-card-name {
+      font-family: var(--font-display);
+      font-size: clamp(18px, 1.8vw, 22px);
+      font-weight: 600;
+      color: var(--text-bright);
+      line-height: 1.3;
+      margin-bottom: 8px;
+    }
+    .portfolio-card-desc {
+      font-size: 14px;
+      color: var(--text-muted);
+      line-height: 1.6;
+      margin-bottom: 20px;
+    }
+    .portfolio-card-link {
+      font-family: var(--font-body);
+      font-size: 13px;
+      font-weight: 600;
+      color: var(--accent-gold);
+      text-decoration: none;
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      transition: gap 0.3s var(--ease-out), color 0.3s ease;
+    }
+    .portfolio-card-link:hover {
+      gap: 10px;
+      color: #DAC06A;
+    }
+    .portfolio-card-link .arrow {
+      transition: transform 0.3s var(--ease-out);
+    }
+    .portfolio-card-link:hover .arrow {
+      transform: translateX(2px);
+    }
+    .portfolio-disclaimer {
+      text-align: center;
+      margin-top: 40px;
+      font-size: 13px;
+      color: var(--text-dim);
+      font-style: italic;
+      position: relative;
+      z-index: 1;
+    }
+    .portfolio-branding {
+      text-align: center;
+      margin-top: 48px;
+      position: relative;
+      z-index: 1;
+    }
+    .portfolio-branding-inner {
+      display: inline-flex;
+      align-items: center;
+      gap: 12px;
+      padding: 12px 24px;
+      border: 1px solid var(--border);
+      border-radius: 999px;
+      background: var(--surface);
+    }
+    .portfolio-branding-icon {
+      width: 24px;
+      height: 24px;
+      border-radius: 50%;
+    }
+    .portfolio-branding-text {
+      font-family: var(--font-mono);
+      font-size: 11px;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      color: var(--text-muted);
+    }
+    .portfolio-branding-text strong {
+      color: var(--accent-gold);
+      font-weight: 600;
+    }
+    @media (max-width: 900px) {
+      .portfolio-grid {
+        grid-template-columns: 1fr;
+        gap: 16px;
+      }
+    }
+    @media (min-width: 901px) and (max-width: 1100px) {
+      .portfolio-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+    }
+
     /* ============ TOOLS MARQUEE ============ */
     .marquee-section {
       padding: 60px 0;
@@ -2034,6 +2188,7 @@
         <li><a href="#solutions">Solutions</a></li>
         <li><a href="#process">Process</a></li>
         <li><a href="#pricing">Apply</a></li>
+        <li><a href="#portfolio">Portfolio</a></li>
         <li><a href="https://calendly.com/ashish-forgevoice/new-meeting" target="_blank" class="nav-cta">Free Assessment</a></li>
       </ul>
       <button class="menu-toggle" id="menuToggle" aria-label="Menu">
@@ -2049,6 +2204,7 @@
     <a href="#solutions" onclick="closeMobileMenu()">Solutions</a>
     <a href="#process" onclick="closeMobileMenu()">Process</a>
     <a href="#pricing" onclick="closeMobileMenu()">Apply</a>
+    <a href="#portfolio" onclick="closeMobileMenu()">Portfolio</a>
     <a href="https://calendly.com/ashish-forgevoice/new-meeting" target="_blank" onclick="closeMobileMenu()">Free Assessment</a>
   </div>
 
@@ -2693,6 +2849,83 @@
               <p class="apply-footnote">AI-scored opportunities &middot; Results in days</p>
             </div>
           </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Portfolio Showcase -->
+  <section class="portfolio-section" id="portfolio">
+    <div class="container">
+      <div class="portfolio-header">
+        <div class="section-label reveal">Portfolio</div>
+        <h2 class="section-title reveal stagger-1">See What We Build</h2>
+        <p class="section-subtitle reveal stagger-2">Real examples. Real quality. Built by AI in hours.</p>
+      </div>
+
+      <div class="portfolio-grid">
+        <!-- Local Business -->
+        <div class="portfolio-card portfolio-card-blue reveal-scale stagger-1">
+          <div class="portfolio-card-bar bar-blue"></div>
+          <div class="portfolio-card-body">
+            <div class="portfolio-card-label label-blue">Local Business</div>
+            <h3 class="portfolio-card-name">Canberra Mobile Mechanic</h3>
+            <p class="portfolio-card-desc">Mobile auto repair service with same-day booking and 4.9-star social proof.</p>
+            <a href="https://local-business-five.vercel.app" target="_blank" class="portfolio-card-link">View Live Demo <span class="arrow">&rarr;</span></a>
+          </div>
+        </div>
+
+        <!-- Professional Services -->
+        <div class="portfolio-card portfolio-card-green reveal-scale stagger-2">
+          <div class="portfolio-card-bar bar-green"></div>
+          <div class="portfolio-card-body">
+            <div class="portfolio-card-label label-green">Professional Services</div>
+            <h3 class="portfolio-card-name">TaxRight Advisory</h3>
+            <p class="portfolio-card-desc">Expert tax planning and BAS lodgement with CPA-certified credibility.</p>
+            <a href="https://professional-services-kohl.vercel.app" target="_blank" class="portfolio-card-link">View Live Demo <span class="arrow">&rarr;</span></a>
+          </div>
+        </div>
+
+        <!-- Ecommerce -->
+        <div class="portfolio-card portfolio-card-amber reveal-scale stagger-3">
+          <div class="portfolio-card-bar bar-amber"></div>
+          <div class="portfolio-card-body">
+            <div class="portfolio-card-label label-amber">Ecommerce</div>
+            <h3 class="portfolio-card-name">Outback Organics</h3>
+            <p class="portfolio-card-desc">Premium Australian organic skincare with product showcase and free shipping.</p>
+            <a href="https://ecommerce-tan-seven-peceds411l.vercel.app" target="_blank" class="portfolio-card-link">View Live Demo <span class="arrow">&rarr;</span></a>
+          </div>
+        </div>
+
+        <!-- SaaS -->
+        <div class="portfolio-card portfolio-card-purple reveal-scale stagger-1">
+          <div class="portfolio-card-bar bar-purple"></div>
+          <div class="portfolio-card-body">
+            <div class="portfolio-card-label label-purple">SaaS</div>
+            <h3 class="portfolio-card-name">FlowMetrics</h3>
+            <p class="portfolio-card-desc">Business intelligence dashboards with real-time analytics and team collaboration.</p>
+            <a href="https://saas-orcin-phi.vercel.app" target="_blank" class="portfolio-card-link">View Live Demo <span class="arrow">&rarr;</span></a>
+          </div>
+        </div>
+
+        <!-- Real Estate -->
+        <div class="portfolio-card portfolio-card-gold reveal-scale stagger-2">
+          <div class="portfolio-card-bar bar-gold"></div>
+          <div class="portfolio-card-body">
+            <div class="portfolio-card-label label-gold">Real Estate</div>
+            <h3 class="portfolio-card-name">Prestige Property Group</h3>
+            <p class="portfolio-card-desc">Premium Canberra property specialists with $180M+ in sales and auction results.</p>
+            <a href="https://real-estate-iota-six-77.vercel.app" target="_blank" class="portfolio-card-link">View Live Demo <span class="arrow">&rarr;</span></a>
+          </div>
+        </div>
+      </div>
+
+      <p class="portfolio-disclaimer reveal">These are AI-generated demonstration pages. Your page will be custom-built for your business.</p>
+
+      <div class="portfolio-branding reveal">
+        <div class="portfolio-branding-inner">
+          <img src="favicon.png" alt="FV" class="portfolio-branding-icon">
+          <span class="portfolio-branding-text"><strong>ForgeVoice Studio</strong> &mdash; Built for Leverage</span>
         </div>
       </div>
     </div>
